@@ -18,11 +18,11 @@ import Sidebar from './components/Sidebar';
       <React.Fragment>
       <Router>
         <NavigationBar />
-        <Sidebar />
         <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route component={NoMatch} />
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/registration" component={Registration}/>
+          <Route component={NoMatch} />
         </Switch>
       </Router>
     </React.Fragment>
