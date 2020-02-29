@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Home } from './components/Home';
 import { About } from './components/About';
 import { NoMatch } from './components/NoMatch';
+import Login from './components/Login';
 import Sidebar from './components/Sidebar';
  class App extends Component {
   render() {
@@ -22,6 +23,7 @@ import Sidebar from './components/Sidebar';
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/registration" component={Registration}/>
+          <Route path = "/login" component = {Login}/>
           <Route component={NoMatch} />
         </Switch>
       </Router>
