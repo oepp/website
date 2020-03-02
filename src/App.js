@@ -1,34 +1,25 @@
-import React, { Component } from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom"; // npm install react-router-dom ı terminale yaz.
-import Registration from './components/Registration';
-import { NavigationBar } from './components/NavigationBar';
-import 'bootstrap/dist/css/bootstrap.css';
-import { Home } from './components/Home';
-import { About } from './components/About';
-import { NoMatch } from './components/NoMatch';
-import Login from './components/Login';
-import Sidebar from './components/Sidebar';
- class App extends Component {
-  render() {
-    return (
-      <React.Fragment>
-      <Router>
-        <NavigationBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/registration" component={Registration}/>
-          <Route path = "/login" component = {Login}/>
-          <Route component={NoMatch} />
-        </Switch>
-      </Router>
-    </React.Fragment>
-    )
-  }
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import SideBar from './components/sidebar/SideBar';
+import Content from './components/content/Content';
+import { BrowserRouter as Router } from "react-router-dom";
+// Çalıştırmak içişn yükleme sırası:
+//** 1-) npm install 
+//2-) npm i -S @fortawesome/fontawesome-svg-core @fortawesome/react-fontawesome 
+//3-) npm i -S @fortawesome/free-light-svg-icons
+//4-) npm install reactstrap
+export default () => {
+
+  const [isOpen, setOpen] = useState(true)
+  const toggle = () => setOpen(!isOpen)
+
+  return (
+    <Router>
+      <div className="App wrapper">
+        <SideBar toggle={toggle} isOpen={isOpen}/>
+        <Content toggle={toggle} isOpen={isOpen}/>
+      </div>
+    </Router>
+  );
 }
-export default App;
