@@ -25,13 +25,14 @@ export default props => {
         <Nav className="ml-auto" navbar>
           
           <NavItem>
-            <NavLink style={{color:'white', fontSize:'medium'}}  tag={Link} to={'/page-1'}>Login</NavLink>
+            <NavLink style={{color:'white', fontSize:'medium'}}  tag={Link} to={'/page-1'}>Sign in</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink style={{color:'white' , fontSize:'medium'}}  tag={Link} to={'/page-2'}>SignIn</NavLink>
+            <NavLink style={{color:'white' , fontSize:'medium'}}  tag={Link} to={'/page-2'}>Sign up</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink style={{color:'white' , fontSize:'medium'}}  tag={Link} to={'/page-3'}>Exit</NavLink>
+            
+            <NavLink style={{color:'white' , fontSize:'medium'}}  tag={Link} to={'/page-3'}>Logout</NavLink>
           </NavItem>
       </Nav>
       </Collapse>
