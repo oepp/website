@@ -14,26 +14,21 @@ class Registration extends Component {
                         <div className="col-sm">
                         <form>
                         <div className="form-group">
-                            <label for="firstName" style={{fontSize:15}}>First Name</label>
-                            <input type="text" className="form-control" id="firstName" style={{width:350}}/>
+                            <input type="text" placeholder="First Name" className="form-control" id="firstName" style={{fontSize:15}}/>
                             </div>
                             <div className="form-group">
-                            <label for="surname" style={{fontSize:15}}>Surname</label>
-                            <input type="text" className="form-control" id="surname" style={{width:350}}/>
+                            <input type="text" placeholder="Surname" className="form-control" id="surname" style={{fontSize:15}} />
                             </div>
                             <div className="form-group">
-                            <label for="email" style={{fontSize:15}}>E-mail</label>
-                            <input type="text" className="form-control" id="email" style={{width:350}}/>
+                            <input type="text" placeholder="E-mail" className="form-control" id="email" style={{fontSize:15}}/>
                             </div>
                             <div className="form-group">
-                            <label for="userName" style={{fontSize:15}}>Username</label>
-                            <input type="text" className="form-control" id="userName" style={{width:350}}/>
+                            <input type="text" placeholder="Username" className="form-control" id="userName" style={{fontSize:15}}/>
                             </div>
                             <div className="form-group">
-                            <label for="exampleInputPassword1" style={{fontSize:15}}>Password</label>
-                            <input type="password" className="form-control" id="exampleInputPassword1" style={{width:350}}/>
+                            <input type="password" placeholder="Password" className="form-control" id="exampleInputPassword1" style={{fontSize:15}}/>
                             </div>
-                            <button type="submit" className="btn btn-primary" style={{backgroundColor:"purple" ,fontSize:16}} >Submit</button>
+                            <button type="submit" className="btn btn-primary" style={{backgroundColor:"#17a2b8" ,fontSize:16}}>Submit</button>
                         </form>
                         </div>
                     </div>

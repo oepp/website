@@ -8,9 +8,10 @@ import Login from '../Login';
 import Home from '../Home';
 import About from '../About';
 import Registration from '../Registration';
+import './navbar.css';
 
 export default props => (
-    <Container fluid className={classNames('content', {'is-open': props.isOpen})}>
+    <Container  fluid className={classNames('content', {'is-open': props.isOpen}, 'container-oepp')}>
       <NavBar toggle={props.toggle}/>
       <Switch>
         <Route exact path="/" component={Home} />

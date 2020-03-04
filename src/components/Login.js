@@ -21,7 +21,7 @@ class Login extends Component {
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" className="form-control" id="exampleInputPassword1" style ={{ width:250}}/>
                             </div>
-                            <button type="submit" className="btn btn-primary" style ={{backgroundColor:"purple"}}>Submit</button>
+                            <button type="submit" className="btn btn-primary" style ={{backgroundColor:"#17a2b8"}}>Submit</button>
                         </form>
                         </div>
                     </div>
