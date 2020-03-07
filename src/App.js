@@ -4,6 +4,8 @@ import './App.css';
 import SideBar from './components/sidebar/SideBar';
 import Content from './components/content/Content';
 import { BrowserRouter as Router } from "react-router-dom";
+import Footer from './components/Footer'
+
 // Çalıştırmak içişn yükleme sırası:
 //** 1-) npm install 
 //2-) npm i -S @fortawesome/fontawesome-svg-core @fortawesome/react-fontawesome 
@@ -20,6 +22,7 @@ export default () => {
         <SideBar toggle={toggle} isOpen={isOpen}/>
         <Content toggle={toggle} isOpen={isOpen}/>
       </div>
+      <Footer/>
     </Router>
   );
 }
