@@ -12,13 +12,13 @@ var style = {
 }
 var iconStyle={
     float:"left",
-    fontSize:'60px',
-    marginBottom:'200px',
+    fontSize:'40px',
+    marginBottom:'100px',
 }
 var phantom = {
   display: 'block',
   padding: '20px',
-  height: '60px',
+  height: '40px',
   width: '100%',
 }
 function Footer({ children }) {
@@ -30,8 +30,8 @@ function Footer({ children }) {
             <i class="fab fa-facebook-square" style={iconStyle}></i>
             <i class="fab fa-instagram" style={iconStyle}></i>
             <i class="fab fa-twitter-square" style={iconStyle}></i>
-            <i class="fab fa-apple" style={{float:'right',fontSize:'60px'}}></i>
-            <i class="fab fa-android" style={{float:'right',fontSize:'60px'}}></i>
+            <i class="fab fa-apple" style={{float:'right',fontSize:'40px'}}></i>
+            <i class="fab fa-android" style={{float:'right',fontSize:'40px'}}></i>
             <p>Powered by Oepp</p>
             </div>
         </div>

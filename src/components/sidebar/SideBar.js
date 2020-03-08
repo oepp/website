@@ -31,13 +31,8 @@ const SideBar = props => (
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink style={{color:'white'}} tag={Link} to={'/faq'}>
-              <FontAwesomeIcon icon={faQuestion} className="mr-2"/>FAQ
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink  style={{color:'white'}} tag={Link} to={'/contact'}>
-              <FontAwesomeIcon icon={faPaperPlane} className="mr-2"/>Yardım
+            <NavLink  style={{color:'white'}} tag={Link} to={'/support'}>
+              <FontAwesomeIcon icon={faPaperPlane} className="mr-2"/>Support
             </NavLink>
           </NavItem>
         </Nav>        
@@ -68,6 +63,10 @@ const SideBar = props => (
       {
         title: "Page 2",
         target: "Page-2",        
+      },
+      {
+        title: "Page 3",
+        target: "Page-3",        
       }
     ]
   ]

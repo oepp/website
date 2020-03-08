@@ -8,6 +8,7 @@ import Login from '../Login';
 import Home from '../Home';
 import About from '../About';
 import Registration from '../Registration';
+import Support from '../Support';
 import './navbar.css';
 
 export default props => (
@@ -17,11 +18,11 @@ export default props => (
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About } />
         <Route path="/Pages" component={() => "Pages" } />
-        <Route path="/faq" component={() => "FAQ" } />
         <Route path="/contact" component={() => "Contact" } />
     
         <Route path="/Page-1" component={Login} />
         <Route path="/Page-2" component={Registration} />
+        <Route path="/Support" component={Support} />
         
       </Switch>
     </Container>
