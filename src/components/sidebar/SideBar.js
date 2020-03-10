@@ -11,8 +11,8 @@ const SideBar = props => (
         <span color="info" onClick={props.toggle} style={{color: '#fff'}}>&times;</span>
        <h3>Oepp'i Keşfet</h3>
       </div>
-      <div className="side-menu" style={{backgroundColor: '#563d7c'}}>
-        <Nav vertical className="list-unstyled pb-3">
+      <div className="side-menu"  style={{backgroundColor: '#563d7c'}}>
+        <Nav vertical className="list-unstyled pb-3"  >
           <p>Kategoriler</p>
           <NavItem>
             <NavLink style={{color:'white'}}  tag={Link} to={'/'}>
@@ -26,8 +26,8 @@ const SideBar = props => (
           </NavItem>
          
           <NavItem>
-            <NavLink style={{color:'white'}} tag={Link} to={'/faq'}>
-              <FontAwesomeIcon icon={faImage} className="mr-2"/>FAQ
+            <NavLink style={{color:'white'}} tag={Link} to={'/Faq'}>
+              <FontAwesomeIcon icon={faQuestion} className="mr-2"/>FAQ
             </NavLink>
           </NavItem>
           <NavItem>

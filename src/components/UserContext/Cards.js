@@ -26,7 +26,7 @@ export default class Cards extends Component {
                   title="Simple English Words with FlashCards"
                   text="English words for 8-12 year old kids. Please working hard!!"
                   />
-
+                
                   </div>
                   <div className="col-md-4">
                   <Card 

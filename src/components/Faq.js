@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 class Faq extends Component {
     render() {
         return (
-            <div className="container" style={{paddingLeft:50}}>
+            <div className="container" style={{paddingLeft:50,paddingTop:100}}>
                 <h3 style ={{color:'blue'}}>Is OEPP free?</h3>
                 <p>Learning on OEPP is free. Our apps are available on Android, iOS, and Web. 
                     However, OEPP application is need internet. </p><br/>

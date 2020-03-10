@@ -9,7 +9,7 @@ const Card =props =>{
             </div>
             <div className="card-body text-dark" style={{height:160}}>
                 <h4 className="card-title">{props.title}</h4>
-                <p className="card-text text-secondary">
+                <p className="card-text text-secondary" style={{fontSize:'1em'}}>
                    {props.text}
                 </p>
                 <a href="#" className="btn btn-outline-success">See Details</a>

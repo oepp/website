@@ -8,7 +8,7 @@ class Support extends Component {
     }
     render() {
         return (
-            <div className="container" style={{paddingLeft:200, marginBottom:20, marginTop:-60}}>
+            <div className="container" style={{paddingLeft:200, marginBottom:20, marginTop:-40,paddingTop:100}}>
                 <br/>
                 <div className="card center"  style={{width:700}} >
                     <div className="card-body" style={{padding:30, width:700, height:470, backgroundColor:'#dfe7f3'}}>

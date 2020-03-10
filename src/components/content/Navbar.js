@@ -13,7 +13,7 @@ export default props => {
   
   return (
     
-    <Navbar className="navbar shadow-sm p-3 mb-5  rounded navbar-oepp" expand="md">
+    <Navbar className="navbar shadow-sm p-3 mb-5  rounded navbar-fixed-top navbar-oepp" fixed="top" expand="md">
       <Button color="info" onClick={props.toggle}>
         <FontAwesomeIcon icon={faAlignLeft}/>
       </Button>
