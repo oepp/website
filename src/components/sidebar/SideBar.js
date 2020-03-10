@@ -27,7 +27,7 @@ const SideBar = props => (
          
           <NavItem>
             <NavLink style={{color:'white'}} tag={Link} to={'/faq'}>
-              <FontAwesomeIcon icon={faImage} className="mr-2"/>Faq
+              <FontAwesomeIcon icon={faImage} className="mr-2"/>FAQ
             </NavLink>
           </NavItem>
           <NavItem>
