@@ -10,6 +10,7 @@ import About from '../About';
 import Registration from '../Registration';
 import Support from '../Support';
 import './navbar.css';
+import Faq from '../Faq';
 
 export default props => (
     <Container  fluid className={classNames('content', {'is-open': props.isOpen}, 'container-oepp')}>
@@ -23,6 +24,7 @@ export default props => (
         <Route path="/Page-1" component={Login} />
         <Route path="/Page-2" component={Registration} />
         <Route path="/Support" component={Support} />
+        <Route path = "/Faq"  component ={Faq} />
         
       </Switch>
     </Container>
