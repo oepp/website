@@ -14,7 +14,7 @@ export default class Cards extends Component {
             <div className="container-fluid d-flex justify-content-center">
               <div className="row">
                   <div className="col-md-4">
-                      <Card 
+                      <Card
                       imgsrc={img3} 
                       title="English Words Game"
                       text="English words for beginners.Please Study!!"
