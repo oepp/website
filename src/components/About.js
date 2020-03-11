@@ -1,19 +1,38 @@
-import React from 'react';
-import styled from 'styled-components';
-const GridWrapper = styled.div`
-  display: grid;
-  grid-gap: 10px;
-  margin-top: 1em;
-  margin-left: 6em;
-  margin-right: 6em;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: minmax(25px, auto);
-`; 
-export const About = () => (
-  <GridWrapper>
-    <h2>About Page</h2>
-    <p>State at ceiling lay on arms while you're using the keyboard so this human feeds me.</p>
-    <p>I am a kitty cat, sup, feed me, no cares in the world</p>
-    <p>Meow meow, I tell my human purr for no reason but to chase after</p>
-  </GridWrapper>
-)
+import React, { Component } from 'react'
+
+
+var pStyle = {
+    fontSize:'25px',
+    fontStyle:'italic'
+}
+
+
+export default class About extends Component {
+    render() {
+        return (
+            <div>
+               <div className='card-header' style={{backgroundColor:'#563d7c', marginTop:-3,paddingTop:100}} >
+                   <h1 style={{textAlign:'center',color:'#fff'}}>Oepp Nedir?</h1>
+               </div>
+               <div className='card-body bg-light' style={pStyle} >
+                <br/>
+               <p><i class="fas fa-puzzle-piece" style={{float:'right',fontSize:'250px'}}></i>Oepp 2020 senesinde Beykent Üniversitesi Yazılım Mühendisliği bitirme projesi çatısı altında 
+               yaratılmış sosyal medya uygulamasıdır. Bu sosyal medya uygulamasının amacı kullanıcı eğlenerek öğrenmenin 
+               eşsiz hazzını yaşatabilmektir.    Web sitesi platformundan oyun içeriklerini yaratıp mobil(Android/iOS) olarak 
+               yayınlayabilme imkanı tanımaktadır. </p>
+               <ul>
+                   <li>Kendi oyunu yaratmak için ;</li>
+                   <li>Eğlenerek öğrenmek için ;</li> <br/>
+               </ul>
+               <button class="button" style={{verticalAlign:'middle'}}><span>Üye Ol </span></button>
+               <button class="button" style={{verticalAlign:'middle'}}><span>Giriş Yap </span></button>
+               <br/><br/><br/><br/>
+               </div> 
+
+
+            </div>     
+        )
+    }
+}
+
+

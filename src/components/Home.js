@@ -1,17 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-const GridWrapper = styled.div`
-  display: grid;
-  grid-gap: 10px;
-  margin-top: 1em;
-  margin-left: 6em;
-  margin-right: 6em;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: minmax(25px, auto);
-`;
-export const Home = (props) => (
-  <GridWrapper>
-    <p>This is a paragraph and I am writing on the home page</p>
-    <p>This is another paragraph, hi hey hello whatsup yo</p>
-  </GridWrapper>
-)
+import React, { Component } from 'react'
+import Cards from './UserContext/Cards';
+
+export default class Home extends Component {
+    render() {
+        return (
+            <div style={{marginBottom:100,marginTop:-10, paddingLeft:100,paddingTop:110}}>      
+                <h2 style={{float:'left', paddingLeft:30,fontSize:'30px'}}><b> Newest games in our Storage</b></h2>
+                <div className="btn-group-vertical col-md-8 align-right"  style={{float:'right', paddingRight:120}}>
+                <button className="btn btn-primary"><h5>Make Your Own Game</h5></button>
+                <button className="btn btn-danger"><h5>Update Your Existing Game</h5></button>
+                </div>
+                <Cards/>
+            </div>
+        )
+    }
+}
