@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 class Registration extends Component {
     render() {
         return (
-            <div className="container" style={{paddingLeft:300, marginTop:-30}}>
+            <div className="container" style={{paddingLeft:300, marginTop:-30,paddingTop:'100px'}}>
                 <br/>
                 <div className="card center"  style={{width:500}} >
                     <div className="card-body" style={{padding:30, width:500, height:400, backgroundColor:'#dfe7f3'}}>
