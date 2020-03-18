@@ -4,10 +4,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 class Registration extends Component {
     render() {
         return (
-            <div className="container" style={{paddingLeft:300, marginTop:-30}}>
+            <div className="container" style={{paddingLeft:320}}>
                 <br/>
-                <div className="card center"  style={{width:500}} >
-                    <div className="card-body" style={{padding:30, width:500, height:400, backgroundColor:'#dfe7f3'}}>
+                <div className="card center"  style={{width:500, marginTop:100}} >
+                    <div className="card-body" style={{padding:50, width:500, height:400, backgroundColor:'#dfe7f3'}}>
                     <h1 className="card-title" style={{textAlign:"center"}} style={{paddingLeft:150}}>Sign Up</h1>
                     <br/>
                     <div className="row">

@@ -7,7 +7,7 @@ const Card =props =>{
             <div className="overflow">
                 <img className="card-img-top" src={props.imgsrc} style={{height:100}} alt="Image 1"/>
             </div>
-            <div className="card-body text-dark" style={{height:160}}>
+            <div className="card-body text-dark" style={{height:300}}>
                 <h4 className="card-title">{props.title}</h4>
                 <p className="card-text text-secondary" style={{fontSize:'1em'}}>
                    {props.text}
