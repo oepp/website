@@ -2,6 +2,79 @@ import React,{Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
 class Registration extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            submitting: false,
+            name: "",
+            surname: "",
+            email: "",
+            username: "",
+            password: "",
+            confirmpassword: ""
+        }
+
+    }
+    setName(event) {
+       this.setState({
+           name: event.target.value
+       })  
+    }
+    setSurname(event){
+        this.setState({
+            surname: event.target.value
+        })
+    }
+    setEmail(event){
+        this.setState({
+            email: event.target.value
+        })
+    }
+    setUsername(event){
+        this.setState({
+            username: event.target.value
+        })
+    }
+    setPassword(event){
+        this.setState({
+            password: event.target.value
+        })
+    }
+    setConfirmPassword(event){
+        this.setState({
+            confirmpassword: event.target.value
+        })
+    }
+    submitClick(event){
+        event.preventDefault();
+        if(this.state.password !== this.state.confirmpassword){
+            alert("Password is not matching")
+            return false
+        }
+        this.setState({
+            submitting: true
+        });
+        const params = {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                name: this.state.name,
+                surname: this.state.surname,
+                email: this.state.email,
+                username: this.state.email,
+                password: this.state.password
+            })
+        }
+        fetch("http://localhost:3001/user/register", params)
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                this.setState({
+                    submitting: false
+                });
+            });
+    }
+    
     render() {
         return (
             <div className="container" style={{paddingLeft:320}}>
@@ -14,21 +87,31 @@ class Registration extends Component {
                         <div className="col-sm">
                         <form style={{paddingLeft:50, paddingRight:50, width:500}}>
                         <div className="form-group">
-                            <input type="text" placeholder="First Name" className="form-control" id="firstName" style={{fontSize:15}}/>
+                            <input type="text" placeholder="Name" className="form-control" id="name" onChange = {this.setName.bind(this)} style={{fontSize:15}}/>
                             </div>
                             <div className="form-group">
-                            <input type="text" placeholder="Surname" className="form-control" id="surname" style={{fontSize:15}} />
+                            <input type="text" placeholder="Surname" className="form-control" id="surname" onChange = {this.setSurname.bind(this)} style={{fontSize:15}} />
                             </div>
                             <div className="form-group">
-                            <input type="text" placeholder="E-mail" className="form-control" id="email" style={{fontSize:15}}/>
+                            <input type="text" placeholder="E-mail" className="form-control" id="email" onChange = {this.setEmail.bind(this)} style={{fontSize:15}}/>
                             </div>
                             <div className="form-group">
-                            <input type="text" placeholder="Username" className="form-control" id="userName" style={{fontSize:15}}/>
+                            <input type="text" placeholder="Username" className="form-control" id="userName" onChange = {this.setUsername.bind(this)} style={{fontSize:15}}/>
                             </div>
                             <div className="form-group">
-                            <input type="password" placeholder="Password" className="form-control" id="exampleInputPassword1" style={{fontSize:15}}/>
+                            <input type="password" placeholder="Password" className="form-control" id="password" onChange = {this.setPassword.bind(this)}style={{fontSize:15}}/>
+                            </div>
+                            <div className="form-group">
+                            <input type="password" placeholder="Confirm Password" className="form-control" id="confirmpassword" onChange = {this.setConfirmPassword.bind(this)} style={{fontSize:15}}/>
                             </div> <br/>
-                            <button type="submit" className="btn btn-primary" style={{backgroundColor:"#17a2b8" ,fontSize:16}} >Submit</button>
+                            {this.state.submitting === true ?
+                            <button className="btn btn-info" style={{backgroundColor:"#17a2b8" ,fontSize:16}} type="button" disabled>
+                            <span className="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
+                                    &nbsp;Submitting...
+                          </button>
+                            : 
+                             <button type="submit" onClick={this.submitClick.bind(this)} className="btn btn-primary" style={{backgroundColor:"#17a2b8" ,fontSize:16}} >Submit</button>
+                            }
                         </form>
                         </div>
                     </div>

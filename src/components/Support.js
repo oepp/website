@@ -23,8 +23,8 @@ class Support extends Component {
                             </div>
                             <div className="form-group">
                                 <label for="subjectType" style={{fontSize:13}}>Subject Type</label>
-                                <select className="form-control" id="subjectType" style={{fontSize:12}}>
-                                <option>General Information</option>
+                                <select className="form-control" id="subjectType"style={{fontSize:14}}>
+                                <option >General Information</option>
                                 <option>Membership</option>
                                 <option>Technical</option>
                                 <option>Other</option>
