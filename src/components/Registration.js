@@ -61,7 +61,7 @@ class Registration extends Component {
                 name: this.state.name,
                 surname: this.state.surname,
                 email: this.state.email,
-                username: this.state.email,
+                username: this.state.username,
                 password: this.state.password
             })
         }
@@ -69,6 +69,9 @@ class Registration extends Component {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                if(result.status === "success"){
+                    alert("Your registration is successful!");
+                }
                 this.setState({
                     submitting: false
                 });
@@ -96,7 +99,7 @@ class Registration extends Component {
                             <input type="text" placeholder="E-mail" className="form-control" id="email" onChange = {this.setEmail.bind(this)} style={{fontSize:15}}/>
                             </div>
                             <div className="form-group">
-                            <input type="text" placeholder="Username" className="form-control" id="userName" onChange = {this.setUsername.bind(this)} style={{fontSize:15}}/>
+                            <input type="text" placeholder="Username" className="form-control" id="username" onChange = {this.setUsername.bind(this)} style={{fontSize:15}}/>
                             </div>
                             <div className="form-group">
                             <input type="password" placeholder="Password" className="form-control" id="password" onChange = {this.setPassword.bind(this)}style={{fontSize:15}}/>
