@@ -27,11 +27,6 @@ class Faq extends Component {
                 <p style = {{fontSize:20}}>The OEPP application is clicked on the login tab on the homepage, after logging in with the required name,<br/> 
                  surname, email and password in the OEPP application are successfully carried out with email and password.</p> <br/><br/><br/><br/><br/><br/>
                 
-
-        
-              
-           
-           
             </div>
             
             
