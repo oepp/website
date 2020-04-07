@@ -38,11 +38,7 @@ class Faq extends Component {
                  surname, email and password in the OEPP application are successfully carried out with email and password.</p><br/><br/><br/><br/><br/><br/>
                 </div>
                 </div>
-                
-                
-                 
-                 
-                  
+                       
             
         );
     }
