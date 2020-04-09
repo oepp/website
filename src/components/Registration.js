@@ -72,6 +72,9 @@ class Registration extends Component {
                 if(result.status === "success"){
                     alert("Your registration is successful!");
                 }
+                if(result.status === "error"){
+                    alert(result.message);
+                }
                 this.setState({
                     submitting: false
                 });
