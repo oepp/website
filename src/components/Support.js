@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import $ from 'jquery';
 
 class Support extends Component {
     constructor(props){
@@ -45,7 +46,7 @@ class Support extends Component {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
                 email: this.state.email,
-                subjectType: this.state.subjectType,
+                subjectType: $('#subjectType').val(),
                 message: this.state.message
             })
         }
@@ -83,7 +84,7 @@ class Support extends Component {
                             </div>
                             <div className="form-group">
                                 <label for="subjectType" style={{fontSize:13}}>Subject Type</label>
-                                <select className="form-control" id="subjectType"style={{fontSize:14}}>
+                                <select className="form-control" id="subjectType" style={{fontSize:14}}>
                                 <option >General Information</option>
                                 <option>Membership</option>
                                 <option>Technical</option>
