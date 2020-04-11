@@ -8,7 +8,7 @@ class Profile extends Component{
             <div className="container" style={{paddingLeft:50}}>
                 <br/>
                 <div className="card center"  style={{width:900, height:300, marginTop:100}} >
-                    <div className="card-body" style={{padding:50, width:900, height:400, backgroundColor:'#fafafa'}}>
+                    <div className="card-body" style={{backgroundColor:'#fafafa'}}>
                     <center><h2>User Information</h2></center> <br/>
                     <div className="row">
                         <div className="col-sm">

@@ -83,11 +83,11 @@ class Registration extends Component {
     
     render() {
         return (
-            <div className="container" style={{paddingLeft:320}}>
+            <div className="container" style={{paddingLeft:150}}>
                 <br/>
-                <div className="card center"  style={{width:500, marginTop:100}} >
-                    <div className="card-body" style={{padding:50, width:500, height:400, backgroundColor:'#dfe7f3'}}>
-                    <h1 className="card-title" style={{textAlign:"center"}} style={{paddingLeft:150}}>Sign Up</h1>
+                <div className="card center"  style={{width:800, marginTop:100}} >
+                    <div className="card-body" style={{backgroundColor:'#fafafa'}}>
+                    <center><h1 className="card-title">Sign Up</h1></center>
                     <br/>
                     <div className="row">
                         <div className="col-sm">

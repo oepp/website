@@ -69,15 +69,14 @@ class Support extends Component {
     }
     render() {
         return (
-            <div className="container" style={{paddingLeft:200, marginBottom:20, marginTop:-40,paddingTop:100}}>
+            <div className="container" style={{paddingLeft:200, marginTop:-40,paddingTop:90}}>
                 <br/>
-                <div className="card center"  style={{width:700}} >
-                    <div className="card-body" style={{padding:30, width:700, height:470, backgroundColor:'#dfe7f3'}}>
-                    <h1 className="card-title" style={{textAlign:"center"}} style={{paddingLeft:250}}>Contact Us</h1>
-                    <br/>
+                <div className="card center"  style={{width:600}} >
+                    <div className="card-body" style={{backgroundColor:'#fafafa'}}>
+                    <center><h1 className="card-title">Contact Us</h1></center>
                     <div className="row">
                         <div className="col-sm">
-                        <form style={{paddingLeft:80, paddingRight:30, width:600}}>
+                        <form style={{paddingLeft:30, paddingRight:30, width:500}}>
                             <div className="form-group">
                                 <label for="supportEmail" style={{fontSize:13}}>Email address</label>
                                 <input type="email" className="form-control" id="supportEmail" onChange = {this.setEmail.bind(this)}/>
