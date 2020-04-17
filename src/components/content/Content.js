@@ -11,13 +11,14 @@ import Registration from '../Registration';
 import Support from '../Support';
 import './navbar.css';
 import Faq from '../Faq';
-
+import Category from '../Category/Category';
 export default props => (
     <Container  fluid className={classNames('content', {'is-open': props.isOpen}, 'container-oepp')}>
       <NavBar toggle={props.toggle}/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About } />
+        <Route path="/category" component={Category} />
         <Route path="/Pages" component={() => "Pages" } />
         <Route path="/contact" component={() => "Contact" } />
     
