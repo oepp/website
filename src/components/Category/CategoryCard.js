@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import img6 from '../UserContext/assets/category.jpg';
+
 export default class CategoryCard extends Component {
     constructor(props){
         super(props)
