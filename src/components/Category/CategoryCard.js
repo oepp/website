@@ -15,7 +15,7 @@ export default class CategoryCard extends Component {
         return (
             <div className="card text-center shadow" style={{margin:10}}>
             <div className="overflow">
-                <img className="card-img-top" src={`data:image/jpeg;base64,${this.displayImage()}`} style={{height:200}} alt="Image 1"/>
+                <img className="card-img-top" src={`data:image/jpeg;base64,${this.displayImage()}`} style={{height:200,width:200}} alt="Image 1"/>
             </div>
             <div className="card-body text-dark" style={{height:160}}>
                 <h4 className="card-title">{this.props.obj.CategoryName}</h4>

@@ -26,9 +26,9 @@ import CategoryCard from './CategoryCard';
             <div style={{paddingTop:100}}> 
             <div className="card-header">
             <h1 style={{textAlign:'center'}}>Explore Oepp Categories find knowledge what you need !</h1></div>
-            <div className="card-body" style={{marginBottom:100,marginTop:-10, paddingLeft:100,paddingTop:210}}>
+            <div className="card-body" style={{marginBottom:100,marginTop:-10, paddingLeft:100,paddingTop:10}}>
             
-              <div className="container-fluid d-flex justify-content-center">
+              <div className="container-fluid d-flex justify-content-center" style={{paddingTop:100}}>
                   <div className="row">
                   
                       {this.cardRow()}
@@ -41,3 +41,4 @@ import CategoryCard from './CategoryCard';
     }
 }
 export default Category
+
