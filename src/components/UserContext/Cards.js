@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Container, Row, Col } from "reactstrap";
 import CardUI from './CardUI';
 
 export default class Cards extends Component {
@@ -23,19 +23,13 @@ export default class Cards extends Component {
     render() {
        
         return (
-            <div style={{paddingTop:100}}> 
-            
-            <div className="card-body" >
-            
-              <div className="container-fluid d-flex justify-content-center " style={{paddingTop:100}}>
-                  <div className="row">
-                  <div className="col-md-4">
-                      {this.cardRow()}
-                  </div>
-                  </div>
-                  </div>
-              </div>
-           </div>
+        <div style={{paddingTop:100}}> 
+           <Container>
+          <Row>         
+                {this.cardRow()}
+          </Row>
+        </Container>
+        </div>
            
            
         )

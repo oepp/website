@@ -12,7 +12,7 @@ export default class CardUI extends Component {
       }
     render() {
         return(
-            <div className="card text-center shadow" style={{marginBottom:20,width:300}}>
+            <div className="card text-center shadow" style={{marginBottom:20,width:250,margin:10}}>
                 <div className="overflow">
                     <img className="card-img-top" src={`data:image/jpeg;base64,${this.displayImage()}`} style={{height:200}} alt="Image 1"/>
                 </div>
