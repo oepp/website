@@ -24,7 +24,7 @@ export default class CardUI extends Component {
                     <a href="#" className="btn btn-outline-success">See Details</a>
                 </div>
                 <div className="card-footer">
-                    <p>{this.props.obj.CategoryName}</p>
+                    <p style={{fontSize:20}}>{this.props.obj.CategoryName}</p>
                 </div>
             </div>
         );

@@ -23,9 +23,9 @@ export default class Cards extends Component {
     render() {
        
         return (
-        <div style={{paddingTop:100}}> 
-           <Container>
-          <Row>         
+        <div style={{paddingTop:100,paddingBottom:60}}> 
+           <Container >
+          <Row style={{backgroundColor:'lightblue'}}>         
                 {this.cardRow()}
           </Row>
         </Container>
