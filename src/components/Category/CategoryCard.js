@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {NavLink} from 'reactstrap';
+import { Link } from 'react-router-dom'
 
 export default class CategoryCard extends Component {
     constructor(props){
-        super(props)
+        super(props);
     }
       displayImage(){
         let data = this.props.obj.CategoryImage;
@@ -10,7 +12,10 @@ export default class CategoryCard extends Component {
         let base64data = buff.toString('base64');
         return base64data;
       }
-    
+      handleClickValue(){
+          return this.props.obj.CategoryName
+      }
+      
     render() {
         return (
             <div className="card text-center shadow" style={{margin:10}}>
@@ -22,7 +27,15 @@ export default class CategoryCard extends Component {
                 <p className="card-text text-secondary" style={{fontSize:'1em'}}>
                    {this.props.obj.Routing + this.props.obj.ID}
                 </p>
-                <button className="btn btn-deep-purple" style={{color:'white',backgroundColor:'purple', width:'100px'}}>Go</button>
+                <NavLink tag={Link} 
+                to={{pathname:'/categoryList/',
+                    state:{
+                        CategoryName:this.props.obj.CategoryName,
+                        ID:'1'
+                    }
+                   }}  >
+                <button onclick={this.handleClickValue()} className="btn btn-deep-purple"  style={{color:'white',backgroundColor:'purple', width:'100px'}}>Go</button>
+                </NavLink>
             </div>
         </div>
         )

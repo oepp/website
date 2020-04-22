@@ -12,6 +12,7 @@ import Support from '../Support';
 import './navbar.css';
 import Faq from '../Faq';
 import Category from '../Category/Category';
+import CategoryList from '../Category/CategoryList';
 export default props => (
     <Container  fluid className={classNames('content', {'is-open': props.isOpen}, 'container-oepp')}>
       <NavBar toggle={props.toggle}/>
@@ -19,7 +20,7 @@ export default props => (
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About } />
         <Route path="/category" component={Category} />
-        <Route path="/Pages" component={() => "Pages" } />
+        <Route path="/categoryList" component={CategoryList} />
         <Route path="/contact" component={() => "Contact" } />
     
         <Route path="/Page-1" component={Login} />

@@ -24,11 +24,11 @@ export default class Cards extends Component {
        
         return (
         <div style={{paddingTop:100,paddingBottom:60}}> 
-           <Container >
+           <h1>Most Relevant Games</h1>
           <Row style={{backgroundColor:'lightblue'}}>         
                 {this.cardRow()}
           </Row>
-        </Container>
+        
         </div>
            
            
