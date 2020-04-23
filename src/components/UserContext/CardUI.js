@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink, Link } from 'react-router-dom';
 
 export default class CardUI extends Component {
     constructor(props){
@@ -21,7 +22,9 @@ export default class CardUI extends Component {
                     <p className="card-text text-secondary" style={{fontSize:'1em'}}>
                        {this.props.obj.GameDescription}
                     </p>
+                    <NavLink tag={Link} to={'/productdetails'}>
                     <a href="#" className="btn btn-outline-success">See Details</a>
+                    </NavLink>
                 </div>
                 <div className="card-footer">
                     <p style={{fontSize:20}}>{this.props.obj.CategoryName}</p>

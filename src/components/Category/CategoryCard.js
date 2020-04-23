@@ -31,7 +31,7 @@ export default class CategoryCard extends Component {
                 to={{pathname:'/categoryList/',
                     state:{
                         CategoryName:this.props.obj.CategoryName,
-                        ID:'1'
+                        ID:this.props.obj.ID
                     }
                    }}  >
                 <button onclick={this.handleClickValue()} className="btn btn-deep-purple"  style={{color:'white',backgroundColor:'purple', width:'100px'}}>Go</button>
