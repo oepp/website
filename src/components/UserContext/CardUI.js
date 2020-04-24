@@ -22,7 +22,13 @@ export default class CardUI extends Component {
                     <p className="card-text text-secondary" style={{fontSize:'1em'}}>
                        {this.props.obj.GameDescription}
                     </p>
-                    <NavLink tag={Link} to={'/productdetails'}>
+                    <NavLink tag={Link} 
+                to={{pathname:'/productdetails',
+                    state:{
+                        GameID:this.props.obj.idGames,
+                        GameTitle:this.props.obj.GameTitle
+                    }
+                   }}  >
                     <a href="#" className="btn btn-outline-success">See Details</a>
                     </NavLink>
                 </div>
