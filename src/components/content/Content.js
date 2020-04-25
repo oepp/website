@@ -11,8 +11,15 @@ import Registration from '../Registration';
 import Support from '../Support';
 import './navbar.css';
 import Faq from '../Faq';
+
+import Profile from '../Profile';
+import ForgotAccount from '../ForgotAccount';
+import ConfirmPassword from '../ConfirmPassword';
+
+
 import Category from '../Category/Category';
 import CategoryList from '../Category/CategoryList';
+
 export default props => (
     <Container  fluid className={classNames('content', {'is-open': props.isOpen}, 'container-oepp')}>
       <NavBar toggle={props.toggle}/>
@@ -27,7 +34,9 @@ export default props => (
         <Route path="/Page-2" component={Registration} />
         <Route path="/Support" component={Support} />
         <Route path = "/Faq"  component ={Faq} />
-        
+        <Route path = "/Profile"  component ={Profile} />
+        <Route path = "/ForgotAccount"  component ={ForgotAccount} />
+        <Route path = "/ConfirmPassword"  component ={ConfirmPassword} />
       </Switch>
     </Container>
 )
