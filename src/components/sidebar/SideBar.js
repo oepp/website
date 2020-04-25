@@ -13,7 +13,11 @@ const SideBar = props => (
       </div>
       <div className="side-menu"  style={{backgroundColor: '#563d7c'}}>
         <Nav vertical className="list-unstyled pb-3"  >
-          <p>Kategoriler</p>
+        <NavItem>
+            <NavLink style={{color:'white'}} tag={Link} to={'/category'}>
+              <FontAwesomeIcon icon={faImage} className="mr-2"/>Kategoriler
+            </NavLink>
+          </NavItem>
           <NavItem>
             <NavLink style={{color:'white'}}  tag={Link} to={'/'}>
               <FontAwesomeIcon icon={faHome} className="mr-2"/>Anasayfa

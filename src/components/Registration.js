@@ -83,7 +83,9 @@ class Registration extends Component {
     
     render() {
         return (
+
             <div className="container" style={{paddingLeft:150}}>
+
                 <br/>
                 <div className="card center"  style={{width:900,height:450,  marginTop:100}} >
                     <div className="card-body" style={{backgroundColor:'#fafafa'}}>

@@ -55,7 +55,9 @@ class Login extends Component {
     }
     render() {
         return (
+
             <div className="container" style={{paddingLeft:150}}>
+
                 <br/>
                 <div className="card center"style={{width:850,height:400,  marginTop:100}}>
                     <div className="card-body" style={{backgroundColor:'#fafafa'}}>
