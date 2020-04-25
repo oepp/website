@@ -36,7 +36,7 @@ export default class CardUI extends Component {
                     <p style={{fontSize:20}}>{this.props.obj.CategoryName}</p>
                 </div>
             </div>
-        </div>
+       
     );
 
     }
