@@ -57,13 +57,10 @@ class Login extends Component {
         return (
 
             <div className="container" style={{paddingLeft:150}}>
-
-                <br/>
-                <div className="card center"style={{width:850,height:400,  marginTop:100}}>
+                <div className="card center"style={{width:775,height:350,marginTop:100}}>
                     <div className="card-body" style={{backgroundColor:'#fafafa'}}>
-                        <center><h1 className="card-title">Sign in</h1></center>
-                        <br/>
-                        <div className="row" style={{paddingRight:250}}>
+                        <center><h1 className="card-title">Sign in</h1></center><br/>
+                        <div className="row" style={{paddingRight:100}}>
                             <div className="col-sm">
                                 <form  style={{paddingLeft:80}}>
                                     <div className="form-group">
@@ -82,13 +79,13 @@ class Login extends Component {
                                     <span className="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
                                             &nbsp;Please Wait..
                                     </button>
-                                        : 
-                                        <button type="submit" onClick={this.submitClick.bind(this)} className="btn btn-primary" style={{backgroundColor:"#17a2b8" ,fontSize:16}} >Login</button>
-                                        }             
+                                    : 
+                                    <button type="submit" onClick={this.submitClick.bind(this)} className="btn btn-primary" style={{backgroundColor:"#17a2b8" ,fontSize:16}} >Login</button>
+                                    }             
                                 </form>
                             </div>
                             <Fragment>
-                                    <img style={{width:200, height:200}} src="/img/logo_transparent.png"/>
+                                    <img style={{width:250, height:250}} src="/img/logo_transparent.png"/>
                             </Fragment>
                         </div>
                     </div>
@@ -98,5 +95,4 @@ class Login extends Component {
         );
     }
 }
-
 export default Login;
