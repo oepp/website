@@ -57,7 +57,7 @@ class Login extends Component {
         return (
 
             <div className="container" style={{paddingLeft:150}}>
-                <div className="card center"style={{width:775,height:350,marginTop:100}}>
+                <div className="card center"style={{width:775,height:350,marginTop:150}}>
                     <div className="card-body" style={{backgroundColor:'#fafafa'}}>
                         <center><h1 className="card-title">Sign in</h1></center><br/>
                         <div className="row" style={{paddingRight:100}}>

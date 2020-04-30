@@ -27,8 +27,8 @@ export default props => (
         <Route path ="/category" component={Category} />
         <Route path ="/categoryList" component={CategoryList} />
         <Route path ="/productdetails" component={ProductDetails} />
-        <Route path ="/Page-1" component={Login} />
-        <Route path ="/Page-2" component={Registration} />
+        <Route path ="/Login" component={Login} />
+        <Route path ="/Registration" component={Registration} />
         <Route path ="/Support" component={Support} />
         <Route path = "/Faq"  component={Faq} />
         <Route path = "/Profile"  component={Profile} />

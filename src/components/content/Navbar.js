@@ -18,21 +18,18 @@ export default props => {
         <FontAwesomeIcon icon={faAlignLeft}/>
       </Button>
       <NavbarToggler onClick={toggle} />
-      
-      <Form className="form-center search-oepp" >
+      <Form className="form-center search-oepp" style={{paddingLeft:300}} >
         <FormControl type="text" placeholder="Search" className=""/>
       </Form>
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto" navbar>
-          
           <NavItem>
-            <NavLink style={{color:'white', fontSize:'medium'}}  tag={Link} to={'/page-1'}><Button color="info" size="lg">Sign in</Button></NavLink>
+            <NavLink style={{color:'white', fontSize:'medium'}}  tag={Link} to={'/Login'}><Button color="info" size="lg">Sign in</Button></NavLink>
           </NavItem>
           <NavItem>
-            <NavLink style={{color:'white' , fontSize:'medium'}}  tag={Link} to={'/page-2'}><Button color="info" size="lg"> Sign up</Button></NavLink>
+            <NavLink style={{color:'white' , fontSize:'medium'}}  tag={Link} to={'/Registration'}><Button color="info" size="lg"> Sign up</Button></NavLink>
           </NavItem>
           <NavItem>
-            
             <NavLink style={{color:'white' , fontSize:'medium'}}  tag={Link} to={'/page-3'}><Button color="info" size="lg">Logout</Button></NavLink>
           </NavItem>
       </Nav>

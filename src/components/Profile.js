@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
 class Profile extends Component{
@@ -47,7 +48,7 @@ class Profile extends Component{
                 <div className="card center"  style={{width:900, height:500, marginTop:20}} >
                     <div className="card-body" style={{padding:50,backgroundColor:'#fafafa'}}>
                         <center><h1 style={{marginBottom:30}}>COURSES</h1></center>
-                        <table className="table table-hover table-dark" style={{height:300}}>
+                        <table className="table table-hover" style={{height:300}}>
                                 <thead>
                                     <tr style={{fontSize:20}}>
                                     <th scope="col">#</th>
@@ -62,11 +63,11 @@ class Profile extends Component{
                                     <td>Language</td>
                                     <td>In Progress</td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-success" style={{fontSize:15}}>%80</button>
+                                        <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%80</button>
                                         &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:15}}>Feedback</button>
+                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback">Feedback</Link></button>
                                         &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-danger"style={{fontSize:15}} >Remove</button>
+                                        <button type="button" class="btn btn-outline-danger"style={{fontSize:18}} >Remove</button>
                                         
                                     </td>
                                     </tr>
@@ -75,11 +76,11 @@ class Profile extends Component{
                                     <td>Music</td>
                                     <td>Completed</td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-success" style={{fontSize:15}}>%100</button>
+                                        <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%100</button>
                                         &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:15}}>Feedback</button>
+                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback">Feedback</Link></button>
                                         &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-danger"style={{fontSize:15}} >Remove</button>
+                                        <button type="button" class="btn btn-outline-danger"style={{fontSize:18}} >Remove</button>
                                     </td>
                                     </tr>
                                     <tr style={{fontSize:18}}>
@@ -87,11 +88,11 @@ class Profile extends Component{
                                     <td>Computer Sciene</td>
                                     <td>Completed</td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-success" style={{fontSize:15}}>%100</button>
+                                        <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%100</button>
                                         &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:15}}>Feedback</button>
+                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback">Feedback</Link></button>
                                         &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-danger"style={{fontSize:15}} >Remove</button>
+                                        <button type="button" class="btn btn-outline-danger"style={{fontSize:18}} >Remove</button>
                                     </td>
                                     </tr>
                                 </tbody>
