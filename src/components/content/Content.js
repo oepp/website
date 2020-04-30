@@ -11,12 +11,10 @@ import Registration from '../Registration';
 import Support from '../Support';
 import './navbar.css';
 import Faq from '../Faq';
-
 import Profile from '../Profile';
+import Feedback from '../Feedback';
 import ForgotAccount from '../ForgotAccount';
 import ConfirmPassword from '../ConfirmPassword';
-
-
 import Category from '../Category/Category';
 import CategoryList from '../Category/CategoryList';
 
@@ -25,18 +23,18 @@ export default props => (
       <NavBar toggle={props.toggle}/>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/about" component={About } />
-        <Route path="/category" component={Category} />
-        <Route path="/categoryList" component={CategoryList} />
-        <Route path="/productdetails" component={ProductDetails} />
-    
-        <Route path="/Page-1" component={Login} />
-        <Route path="/Page-2" component={Registration} />
-        <Route path="/Support" component={Support} />
-        <Route path = "/Faq"  component ={Faq} />
-        <Route path = "/Profile"  component ={Profile} />
-        <Route path = "/ForgotAccount"  component ={ForgotAccount} />
-        <Route path = "/ConfirmPassword"  component ={ConfirmPassword} />
+        <Route path ="/about" component={About } />
+        <Route path ="/category" component={Category} />
+        <Route path ="/categoryList" component={CategoryList} />
+        <Route path ="/productdetails" component={ProductDetails} />
+        <Route path ="/Page-1" component={Login} />
+        <Route path ="/Page-2" component={Registration} />
+        <Route path ="/Support" component={Support} />
+        <Route path = "/Faq"  component={Faq} />
+        <Route path = "/Profile"  component={Profile} />
+        <Route path = "/Feedback" component={Feedback}/>
+        <Route path = "/ForgotAccount"  component={ForgotAccount} />
+        <Route path = "/ConfirmPassword"  component={ConfirmPassword} />
       </Switch>
     </Container>
 )
