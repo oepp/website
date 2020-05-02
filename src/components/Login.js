@@ -39,7 +39,8 @@ class Login extends Component {
             body: JSON.stringify({
                 username: this.state.username,
                 password: this.state.password
-            })
+            }),
+            credentials: 'same-origin'
         }
         fetch("http://localhost:3001/user/login", params)
             .then(res => res.json())

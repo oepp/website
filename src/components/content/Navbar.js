@@ -29,8 +29,8 @@ export default props => {
           <NavItem>
             <NavLink style={{color:'white' , fontSize:'medium'}}  tag={Link} to={'/Registration'}><Button color="info" size="lg"> Sign up</Button></NavLink>
           </NavItem>
-          <NavItem>
-            <NavLink style={{color:'white' , fontSize:'medium'}}  tag={Link} to={'/page-3'}><Button color="info" size="lg">Logout</Button></NavLink>
+          <NavItem style={{marginTop:15}}>
+            <a style={{color:'white' , fontSize:'medium'}}  tag={Link} href={'http://localhost:3001/user/logout'}><Button color="info" size="lg">Logout</Button></a>
           </NavItem>
       </Nav>
       </Collapse>

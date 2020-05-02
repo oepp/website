@@ -65,7 +65,7 @@ class Profile extends Component{
                                     <td>
                                         <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%80</button>
                                         &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback">Feedback</Link></button>
+                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback?gameId=1">Feedback</Link></button>
                                         &nbsp;&nbsp;
                                         <button type="button" class="btn btn-outline-danger"style={{fontSize:18}} >Remove</button>
                                         
@@ -78,7 +78,7 @@ class Profile extends Component{
                                     <td>
                                         <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%100</button>
                                         &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback">Feedback</Link></button>
+                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback?gameId=1">Feedback</Link></button>
                                         &nbsp;&nbsp;
                                         <button type="button" class="btn btn-outline-danger"style={{fontSize:18}} >Remove</button>
                                     </td>
@@ -90,7 +90,7 @@ class Profile extends Component{
                                     <td>
                                         <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%100</button>
                                         &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback">Feedback</Link></button>
+                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback?gameId=1">Feedback</Link></button>
                                         &nbsp;&nbsp;
                                         <button type="button" class="btn btn-outline-danger"style={{fontSize:18}} >Remove</button>
                                     </td>
