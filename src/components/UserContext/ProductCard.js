@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CommentBox from '../Reviews/CommentBox';
 
 export default class ProductCard extends Component {
     constructor(props){
@@ -23,7 +24,9 @@ export default class ProductCard extends Component {
                    <li>CreatorName: {this.props.obj.username}</li>
                    <li>Email: {this.props.obj.email}</li>
                 </ul>
+                <CommentBox />
               </div> 
+              
             </div>
             
         )
