@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './comments.scss'
 export default class CommentBox extends React.Component {
     constructor() {
       super();

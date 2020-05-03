@@ -3,7 +3,7 @@ export default class FBShareButton extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-        url : 'http://localhost:3000/productdetails'
+        url : 'facebook.com'
       }
     }
     
