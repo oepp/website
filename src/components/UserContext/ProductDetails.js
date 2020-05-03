@@ -26,7 +26,7 @@ export default class ProductDetails extends Component {
             <div style={{paddingTop:100}}> 
             <div className="card-header">
         <h1 style={{textAlign:'center'}}><b>You are looking for {this.props.history.location.state.GameTitle} details.</b> </h1></div>
-            <div className="card-body" style={{marginBottom:100,marginTop:-10, paddingLeft:100,paddingTop:10}}>
+            <div className="card-body" style={{marginBottom:100,marginTop:-10, paddingLeft:100}}>
             
               <div className="container-fluid d-flex justify-content-center" style={{paddingTop:100}}>
                   <div className="row">
