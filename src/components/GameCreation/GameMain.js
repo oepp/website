@@ -75,38 +75,42 @@ export default class GameMain extends Component {
             width:'20em',
             paddingBottom:10
         }
+        var cardStyle={
+            border:'5px solid lightblue',
+            marginTop:'20px'
+        }
         return (
             <div className="container" style={{paddingTop:100}}>
                 <h1><b>You are here in Game creation page.</b></h1><hr/>
-                <div className="card-header">
-                    <h1 style={{textAlign:'center'}}><b>Explain your game with fill in below questions.</b></h1>
+                <div className="card-header" style={cardStyle}>
+                    <h1 style={{textAlign:'center'}}><ins><b>Explain your game with fill in below questions.</b></ins></h1>
                 </div>
-                <div className="card-body">
+                <div className="card-body" style={cardStyle}>
                 <Table>
                     <form>
                     <tr>
-                            <Label style={labelStyle}> 1. What is your game title?</Label><br/>
+                            <Label style={labelStyle}> 1. What is your game's title?</Label><br/>
                             <input  style={inputStyle} id="GameTitle" onChange = {this.setGameTitle.bind(this)} type="text" placeholder="Enter title here..."></input>
                     </tr>
                     <tr>
                         
-                        <Label style={labelStyle}>2. What is your game description?</Label><br/>
+                        <Label style={labelStyle}>2. What is your game's description?</Label><br/>
                         <textarea style={inputStyle} id="GameDescription" onChange = {this.setGameDescription.bind(this)} placeholder="Enter description here..."></textarea>
                     
                 </tr> <tr>
                         
-                        <Label style={labelStyle}>3.Choose image?</Label><br/>
+                        <Label style={labelStyle}>3.Choose image.</Label><br/>
                         <input type="file" id="GameImage" onChange = {this.setGameImage.bind(this)} style={inputStyle} ></input>
                     
                 </tr> <tr>
                         
-                        <Label style={labelStyle}>4. Choose category?</Label><br/>                     
+                        <Label style={labelStyle}>4. Choose category.</Label><br/>                     
           <select  style={inputStyle} id="CategoryID" onChange = {this.setCategoryID.bind(this)}>
             <option value={2}>Music</option>
             <option value={1}>Language</option>
             <option value={3}>Science</option>
             <option value={4}>Sport</option>
-          </select>   
+          </select><br/><br/>   
           {this.state.submitting === true ?
                                     <button className="btn btn-info" style={{backgroundColor:"#17a2b8" ,fontSize:16}} type="button" disabled>
                                     <span className="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
@@ -115,10 +119,10 @@ export default class GameMain extends Component {
                                     : 
                                     <button type="submit" onClick={this.submitClick.bind(this)} className="btn btn-primary" style={{backgroundColor:"#17a2b8" ,fontSize:16}} >Create</button>
                                     }  
-                </tr>
+                </tr><br/>
                 <tr>
                 <NavLink to={"/questions"} tag={Link}>
-                   <button style={{width:'40em',height:'5em',float:'right',fontSize:'10px'}} className="btn btn-primary">Continue with defining questions =></button></NavLink>      
+                   <button style={{width:'20em',float:'right',fontSize:'30px'}} className="btn btn-primary">Continue with defining questions =></button></NavLink>      
                 </tr> 
                 </form>
                 </Table>
