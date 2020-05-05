@@ -3,6 +3,68 @@ import { Table, Label } from 'reactstrap'
 import { NavLink, Link } from 'react-router-dom'
 
 export default class GameMain extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            submitting: false,
+            GameTitle: "",
+            GameDescription: "",
+            GameImage: null,
+            CategoryID: 0,
+        }
+
+    }
+    setGameTitle(event) {
+        this.setState({
+            GameTitle: event.target.value
+        })  
+     }
+     setGameDescription(event){
+         this.setState({
+             GameDescription: event.target.value
+         })
+     }
+     setGameImage(event){
+         this.setState({
+             GameImage: event.target.value
+         })
+     }
+     setCategoryID(event){
+         this.setState({
+             CategoryID: event.target.value
+         })
+     }
+    
+     submitClick(event){
+         event.preventDefault();
+         this.setState({
+             submitting: true
+         });
+         const params = {
+             method: "POST",
+             headers: {"Content-Type": "application/json"},
+             body: JSON.stringify({
+                 GameTitle: this.state.GameTitle,
+                 GameDescription: this.state.GameDescription,
+                 GameImage: this.state.GameImage,
+                 CategoryID: this.state.CategoryID,
+             })
+         }
+         fetch("http://localhost:3001/games/addGame", params)
+             .then(res => res.json())
+             .then(result => {
+                 console.log(result);
+                 if(result.status === "success"){
+                     alert("Game Added Succesfully!!");
+                 }
+                 if(result.status === "error"){
+                     alert(result.message);
+                 }
+                 this.setState({
+                     submitting: false
+                 });
+             });
+     }
     render() {
         var labelStyle={
             fontSize:'25px',
@@ -21,36 +83,44 @@ export default class GameMain extends Component {
                 </div>
                 <div className="card-body">
                 <Table>
+                    <form>
                     <tr>
-                        
                             <Label style={labelStyle}> 1. What is your game title?</Label><br/>
-                            <input  style={inputStyle} type="text" placeholder="Enter title here..."></input>
-                        
+                            <input  style={inputStyle} id="GameTitle" onChange = {this.setGameTitle.bind(this)} type="text" placeholder="Enter title here..."></input>
                     </tr>
                     <tr>
                         
                         <Label style={labelStyle}>2. What is your game description?</Label><br/>
-                        <textarea style={inputStyle} placeholder="Enter description here..."></textarea>
+                        <textarea style={inputStyle} id="GameDescription" onChange = {this.setGameDescription.bind(this)} placeholder="Enter description here..."></textarea>
                     
                 </tr> <tr>
                         
                         <Label style={labelStyle}>3.Choose image?</Label><br/>
-                        <input type="file" style={inputStyle} ></input>
+                        <input type="file" id="GameImage" onChange = {this.setGameImage.bind(this)} style={inputStyle} ></input>
                     
                 </tr> <tr>
                         
                         <Label style={labelStyle}>4. Choose category?</Label><br/>                     
-          <select  style={inputStyle} onChange={this.handleChange}>
-            <option value="elma">Music</option>
-            <option value="armut">Language</option>
-            <option value="havuç">Science</option>
-            <option value="muz">Sport</option>
-          </select>     
+          <select  style={inputStyle} id="CategoryID" onChange = {this.setCategoryID.bind(this)}>
+            <option value={2}>Music</option>
+            <option value={1}>Language</option>
+            <option value={3}>Science</option>
+            <option value={4}>Sport</option>
+          </select>   
+          {this.state.submitting === true ?
+                                    <button className="btn btn-info" style={{backgroundColor:"#17a2b8" ,fontSize:16}} type="button" disabled>
+                                    <span className="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
+                                            &nbsp;Submitting...
+                                </button>
+                                    : 
+                                    <button type="submit" onClick={this.submitClick.bind(this)} className="btn btn-primary" style={{backgroundColor:"#17a2b8" ,fontSize:16}} >Create</button>
+                                    }  
                 </tr>
                 <tr>
                 <NavLink to={"/questions"} tag={Link}>
                    <button style={{width:'40em',height:'5em',float:'right',fontSize:'10px'}} className="btn btn-primary">Continue with defining questions =></button></NavLink>      
                 </tr> 
+                </form>
                 </Table>
                 </div>
             </div>
