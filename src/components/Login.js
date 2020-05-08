@@ -1,5 +1,6 @@
 import React,{Component, Fragment} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import axios from 'axios';
 
 class Login extends Component {
     constructor(props){
@@ -33,26 +34,23 @@ class Login extends Component {
         this.setState({
             submitting: true
         });
+
         const params = {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                username: this.state.username,
-                password: this.state.password
-            }),
-            credentials: 'same-origin'
+            username: this.state.username,
+            password: this.state.password
         }
-        fetch("http://localhost:3001/user/login", params)
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
-                if(result.status === "success"){
-                    alert("Login is success!");
-                }
-                this.setState({
-                    submitting: false
-                });
+
+        axios.post('http://localhost:3001/user/login', params, {withCredentials: true}).then(result => {
+            if(result.data.status === "success"){
+                alert("Login is success!");
+                window.location = "http://localhost:3000/Profile";
+            } else if (result.data.status === "error") {
+                alert(result.data.message);
+            }
+            this.setState({
+                submitting: false
             });
+        });
     }
     render() {
         return (
@@ -65,11 +63,11 @@ class Login extends Component {
                             <div className="col-sm">
                                 <form  style={{paddingLeft:80}}>
                                     <div className="form-group">
-                                    <label for="email"  style={{fontSize:15}}>Username</label>
+                                    <label htmlFor="email"  style={{fontSize:15}}>Username</label>
                                     <input type="text"  className="form-control" id="email" onChange = {this.setUsername.bind(this)} style ={{ width:300}}/>
                                     </div>
                                     <div className="form-group">
-                                    <label for="exampleInputPassword1"  style={{fontSize:15}}>Password</label>
+                                    <label htmlFor="exampleInputPassword1"  style={{fontSize:15}}>Password</label>
                                     <input type="password" className="form-control" id="exampleInputPassword1" onChange = {this.setPassword.bind(this)} style ={{ width:300}}/>
                                     </div>
                                     <div>

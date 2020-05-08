@@ -1,8 +1,47 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
+import axios from 'axios';
 
 class Profile extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: "",
+            surname: "",
+            email: "",
+            username: "",
+            password: "",
+            confirmPassword: ""
+        }
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:3001/user/profile', {withCredentials: true}).then(res => {
+            if (res.data !== undefined && res.data.data !== undefined) {
+                const data = res.data.data;
+                if (res.data.status === "success") {
+                    console.log(data);
+                    this.setState({
+                        name: data.name,
+                        surname: data.surname,
+                        email: data.email,
+                        username: data.username
+                    });
+                } else if (res.data.status === "error") {
+                    alert(data.message);
+                }
+            }
+        }).catch(function(error) {
+            window.location = "http://localhost:3000/Login";
+        })
+    }
+
+    onTextInput(event) {
+        const field = event.target.name;
+        const value = event.target.value;
+
+    }
 
     render() {
         return (
@@ -15,26 +54,26 @@ class Profile extends Component{
                             <div className="col-sm">
                                 <div className="form-row">
                                     <div className="col-6" style={{paddingLeft:75}}>
-                                    <input className="form-control form-control-lg" type="text" placeholder="Name"></input>
+                                    <input name={'name'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.name} placeholder="Name"></input>
                                     </div> &nbsp; &nbsp; 
                                     <div className="col-5" style={{paddingLeft:50}}>
-                                    <input className="form-control form-control-lg" type="text" placeholder="Surname"></input>
+                                    <input name={'surname'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.surname} placeholder="Surname"></input>
                                     </div>  &nbsp; &nbsp; 
                                 </div><br/>
                                 <div className="form-row">
                                     <div className="col-6" style={{paddingLeft:75}}>
-                                    <input className="form-control form-control-lg" type="text" placeholder="Email"></input>
+                                    <input name={'email'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.email} placeholder="Email"></input>
                                     </div>  &nbsp; &nbsp; 
                                     <div className="col-5" style={{paddingLeft:50}}>
-                                    <input className="form-control form-control-lg" type="text" placeholder="Username"></input>
+                                    <input name={'username'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.username} placeholder="Username"></input>
                                     </div> &nbsp; &nbsp; 
                                 </div><br/>
                                 <div className="form-row">
                                     <div className="col-6" style={{paddingLeft:75}}>
-                                    <input className="form-control form-control-lg" type="password" placeholder="Password"></input>
+                                    <input name={'password'} className="form-control form-control-lg" type="password" onChange={this.onTextInput.bind(this)} value={this.state.password} placeholder="Password"></input>
                                     </div>  &nbsp; &nbsp; 
                                     <div className="col-5" style={{paddingLeft:50}}>
-                                    <input className="form-control form-control-lg" type="password" placeholder="Confirm Password"></input>
+                                    <input name={'confirmPassword'} className="form-control form-control-lg" type="password" onChange={this.onTextInput.bind(this)} value={this.state.confirmPassword} placeholder="Confirm Password"></input>
                                     </div> 
                                 </div><br/><br/>
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
 import StarRatings from 'react-star-ratings';
+import axios from 'axios';
 
 class Feedback extends Component {
     constructor(props){
@@ -13,6 +14,11 @@ class Feedback extends Component {
     }
 
     componentDidMount(){
+        axios.get('http://localhost:3001/user/profile', {withCredentials: true}).then(res => {
+            console.log(res); //logged in
+        }).catch(function(error) {
+            window.location = "http://localhost:3000/Login";
+        })
         const params = new URLSearchParams(window.location.search);
         this.setState({
             gameId: parseInt(params.get('gameId'))
@@ -46,28 +52,23 @@ class Feedback extends Component {
         });
 
         const params = {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                feedbackmessage: this.state.feedbackmessage, 
-                gameId: this.state.gameId,
-                rating: this.state.rating
-            }),
-            credentials: 'same-origin'
+            feedbackmessage: this.state.feedbackmessage, 
+            gameId: this.state.gameId,
+            rating: this.state.rating
         }
-        fetch("http://localhost:3001/user/feedback", params)
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
-                if(result.status === "success"){
-                    alert("Feedback Message is success!");
-                }else{
-                    alert(result.message);
-                }
-                this.setState({
-                    submitting: false
-                });
+
+        axios.post('http://localhost:3001/user/feedback', params, {withCredentials: true}).then(result => {
+            if(result.data.status === "success"){
+                alert("Feedback Message submitted!");
+            }else{
+                alert(result.data.message);
+            }
+            this.setState({
+                submitting: false
             });
+        }).catch(function(error) {
+            window.location = "http://localhost:3000/Login";
+        })
     }
     
     render() {
