@@ -83,14 +83,10 @@ class Registration extends Component {
     
     render() {
         return (
-
             <div className="container" style={{paddingLeft:150}}>
-
-                <br/>
-                <div className="card center"  style={{width:900,height:450,  marginTop:100}} >
+                <div className="card center"  style={{width:900,height:450, marginTop:120}} >
                     <div className="card-body" style={{backgroundColor:'#fafafa'}}>
-                    <center><h1 className="card-title">Sign Up</h1></center>
-                    <br/>
+                        <center><h1 className="card-title">Sign Up</h1></center><br/>
                         <div className="row" style={{paddingRight:100 }}  >
                             <div className="col-sm">
                                 <form style={{paddingLeft:50,width:450}}>
@@ -116,7 +112,7 @@ class Registration extends Component {
                                     <button className="btn btn-info" style={{backgroundColor:"#17a2b8" ,fontSize:16}} type="button" disabled>
                                     <span className="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
                                             &nbsp;Submitting...
-                                </button>
+                                    </button>
                                     : 
                                     <button type="submit" onClick={this.submitClick.bind(this)} className="btn btn-primary" style={{backgroundColor:"#17a2b8" ,fontSize:16}} >Submit</button>
                                     }
@@ -126,13 +122,10 @@ class Registration extends Component {
                                     <img style={{width:320, height:320}} src="/img/logo_transparent.png"/>
                             </Fragment>
                         </div>
-                       
                     </div>
                 </div>
-            </div>
-            
+            </div>  
         );
     }
 }
-
 export default Registration;

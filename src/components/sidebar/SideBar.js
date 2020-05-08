@@ -62,11 +62,11 @@ const SideBar = props => (
     [
       {
         title: "Page 1",
-        target: "Page-1",          
+        target: "Login",          
       },
       {
         title: "Page 2",
-        target: "Page-2",        
+        target: "Registration",        
       },
       {
         title: "Page 3",

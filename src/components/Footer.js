@@ -27,11 +27,11 @@ function Footer({ children }) {
             <div style={phantom} />
             <div style={style}>
            
-            <i class="fab fa-facebook-square" style={iconStyle}></i>
-            <i class="fab fa-instagram" style={iconStyle}></i>
-            <i class="fab fa-twitter-square" style={iconStyle}></i>
-            <i class="fab fa-apple" style={{float:'right',fontSize:'40px'}}></i>
-            <i class="fab fa-android" style={{float:'right',fontSize:'40px'}}></i>
+            <i className="fab fa-facebook-square" style={iconStyle}></i>
+            <i className="fab fa-instagram" style={iconStyle}></i>
+            <i className="fab fa-twitter-square" style={iconStyle}></i>
+            <i className="fab fa-apple" style={{float:'right',fontSize:'40px'}}></i>
+            <i className="fab fa-android" style={{float:'right',fontSize:'40px'}}></i>
             <p>Powered by Oepp</p>
             </div>
         </div>

@@ -16,7 +16,7 @@ export default class Cards extends Component {
         .catch(err => console.error(err))
     }
     cardRow(){
-        return this.state.games.map(function(object,i){
+        return this.state.games !== undefined && this.state.games.map(function(object,i){
             return <CardUI obj={object} key={i}/>
         })
     }
