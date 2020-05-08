@@ -18,6 +18,9 @@ import ConfirmPassword from '../ConfirmPassword';
 import Category from '../Category/Category';
 import CategoryList from '../Category/CategoryList';
 import FeedbackList from '../FeedbackList';
+import GameMain from '../GameCreation/GameMain';
+import Questions from '../GameCreation/Questions';
+
 
 export default props => (
     <Container  fluid className={classNames('content', {'is-open': props.isOpen}, 'container-oepp')}>
@@ -37,6 +40,8 @@ export default props => (
         <Route exact path = "/Feedback" component={Feedback}/>
         <Route path = "/ForgotAccount"  component={ForgotAccount} />
         <Route path = "/ConfirmPassword"  component={ConfirmPassword} />
+        <Route path="/gameMain" component={GameMain}/>
+        <Route path="/questions" component={Questions}/>
       </Switch>
     </Container>
 )
