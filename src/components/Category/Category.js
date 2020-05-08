@@ -14,7 +14,7 @@ import CategoryCard from './CategoryCard';
          .catch(err => console.error(err))
      }
       cardRow() {
-          return this.state.categories.map(function(object,i){
+          return this.state.categories !== undefined && this.state.categories.map(function(object,i){
               return <CategoryCard obj={object} key = {i}/>
           })
       }
