@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Label } from 'reactstrap'
+import {  Label } from 'reactstrap'
 import { NavLink, Link } from 'react-router-dom'
 
 export default class GameMain extends Component {
@@ -86,7 +86,7 @@ export default class GameMain extends Component {
                     <h1 style={{textAlign:'center'}}><ins><b>Explain your game with fill in below questions.</b></ins></h1>
                 </div>
                 <div className="card-body" style={cardStyle}>
-                <Table>
+                
                     <form>
                     <tr>
                             <Label style={labelStyle}> 1. What is your game's title?</Label><br/>
@@ -125,7 +125,7 @@ export default class GameMain extends Component {
                    <button style={{width:'20em',float:'right',fontSize:'30px'}} className="btn btn-primary">Continue with defining questions =></button></NavLink>      
                 </tr> 
                 </form>
-                </Table>
+                
                 </div>
             </div>
         )

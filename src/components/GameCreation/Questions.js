@@ -29,11 +29,15 @@ const Form = () => {
   );
 };
 export default class Questions extends Component {
+  constructor(props){
+    super(props)
+  }
     render() {
         return (
             <div style={{paddingTop:100}}>
               <div className="card-header">
                 <h1 style={{align: 'center'}}>Please define your questions.</h1>
+                
               </div>
                 <Form style={{paddingTop:'50px'}}/>
                 <Button>Press for saving questions</Button>
