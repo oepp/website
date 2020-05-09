@@ -54,7 +54,7 @@ a,
 a:hover,
 a:focus {
     color: inherit;
-    background-color: #563d7c;
+    /* background-color: #563d7c; */
     text-decoration: none;
     transition: all 0.3s;
 }
