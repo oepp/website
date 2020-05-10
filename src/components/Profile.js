@@ -12,7 +12,8 @@ class Profile extends Component{
             email: "",
             username: "",
             password: "",
-            confirmPassword: ""
+            confirmPassword: "",
+            contents: []
         }
     }
 
@@ -35,15 +36,79 @@ class Profile extends Component{
         }).catch(function(error) {
             window.location = "http://localhost:3000/Login";
         })
+
+        axios.get('http://localhost:3001/user/profile/contents', {withCredentials: true}).then(res => {
+            if (res.data !== undefined && res.data.data !== undefined) {
+                const data = res.data.data;
+                if (res.data.status === "success") {
+                    this.setState({
+                        contents: data
+                    });
+                }
+            }
+        })
     }
 
     onTextInput(event) {
         const field = event.target.name;
         const value = event.target.value;
 
+        this.setState({
+            ...this.state,
+            [field]: value
+        });
+    }
+
+    onEditForm(event) {
+        console.log("Updating user");
+        if (this.state.password.trim() !== "" && this.state.password !== this.state.confirmPassword) {
+            alert("Password and confirm password is not matching!");
+            return false;
+        }
+
+        const params = {
+            name: this.state.name,
+            surname: this.state.surname,
+            email: this.state.email,
+            username: this.state.username,
+            password: this.state.password,
+            confirmPassword: this.state.confirmPassword
+        }
+
+        axios.post('http://localhost:3001/user/profile', params, {withCredentials: true}).then(result => {
+            if (result.data) {
+                alert(result.data.message);
+            }
+
+            this.setState({
+                submitting: false
+            });
+        }).catch(function(error) {
+            window.location = "http://localhost:3000/Login";
+        })
     }
 
     render() {
+        const contents = [];
+        if (this.state.contents && this.state.contents.length > 0) {
+            this.state.contents.forEach(item => {
+                contents.push(
+                    <tr style={{fontSize:18}}>
+                        <th scope="row">{item.id}</th>
+                        <td>{item.course}</td>
+                        <td>In Progress</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%80</button>
+                            &nbsp;&nbsp;
+                            <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to={"./feedback?gameId=" + item.id}>Feedback</Link></button>
+                            &nbsp;&nbsp;
+                            <button type="button" class="btn btn-outline-danger"style={{fontSize:18}} >Remove</button>
+                            
+                        </td>
+                    </tr>
+                );
+            });
+        }
         return (
             <div className="container" style={{paddingLeft:100,height:1000}}>
                 <br/>
@@ -78,7 +143,7 @@ class Profile extends Component{
                                 </div><br/><br/>
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                 <div style={{paddingLeft:445}}>
-                                    <button type="button" className="btn btn-primary btn-lg" style={{backgroundColor:'#5062e1'}}>&nbsp; &nbsp;Edit&nbsp; &nbsp;</button>
+                                    <button type="button" className="btn btn-primary btn-lg" onClick={this.onEditForm.bind(this)} style={{backgroundColor:'#5062e1'}}>&nbsp; &nbsp;Edit&nbsp; &nbsp;</button>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +151,7 @@ class Profile extends Component{
                 </div>
                 <div className="card center"  style={{width:900, height:500, marginTop:20}} >
                     <div className="card-body" style={{padding:50,backgroundColor:'#fafafa'}}>
-                        <center><h1 style={{marginBottom:30}}>COURSES</h1></center>
+                        <center><h1 style={{marginBottom:30}}>GAMES</h1></center>
                         <table className="table table-hover" style={{height:300}}>
                                 <thead>
                                     <tr style={{fontSize:20}}>
@@ -97,43 +162,7 @@ class Profile extends Component{
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr style={{fontSize:18}}>
-                                    <th scope="row">1</th>
-                                    <td>Language</td>
-                                    <td>In Progress</td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%80</button>
-                                        &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback?gameId=1">Feedback</Link></button>
-                                        &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-danger"style={{fontSize:18}} >Remove</button>
-                                        
-                                    </td>
-                                    </tr>
-                                    <tr style={{fontSize:18}}>
-                                    <th scope="row">2</th>
-                                    <td>Music</td>
-                                    <td>Completed</td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%100</button>
-                                        &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback?gameId=1">Feedback</Link></button>
-                                        &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-danger"style={{fontSize:18}} >Remove</button>
-                                    </td>
-                                    </tr>
-                                    <tr style={{fontSize:18}}>
-                                    <th scope="row">3</th>
-                                    <td>Computer Sciene</td>
-                                    <td>Completed</td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%100</button>
-                                        &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to="./feedback?gameId=1">Feedback</Link></button>
-                                        &nbsp;&nbsp;
-                                        <button type="button" class="btn btn-outline-danger"style={{fontSize:18}} >Remove</button>
-                                    </td>
-                                    </tr>
+                                    {contents}
                                 </tbody>
                         </table>
                     </div>
