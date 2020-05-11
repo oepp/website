@@ -11,8 +11,12 @@ export default class GameMain extends Component {
             GameDescription: "",
             GameImage: null,
             CategoryID: 0,
+            selectedvalue : 0
         }
 
+    }
+    setTemplate(event){
+        this.setState({selectedvalue: event.target.value});
     }
     setGameTitle(event) {
         this.setState({
@@ -66,8 +70,9 @@ export default class GameMain extends Component {
              });
      }
     render() {
+        var send = this.state.selectedvalue;
         var labelStyle={
-            fontSize:'25px',
+            fontSize:'15px',
             textAlign:'center'
         }
         var inputStyle={
@@ -102,14 +107,23 @@ export default class GameMain extends Component {
                         <Label style={labelStyle}>3.Choose image.</Label><br/>
                         <input type="file" id="GameImage" onChange = {this.setGameImage.bind(this)} style={inputStyle} ></input>
                     
-                </tr> <tr>
+                </tr><tr>
                         
-                        <Label style={labelStyle}>4. Choose category.</Label><br/>                     
+                        <Label  id="template" style={labelStyle}>4.Which is your game template.</Label><br/>
+                        <select  style={inputStyle} value={this.state.selectedvalue} onChange={this.setTemplate.bind(this)} id="GameType" >
+                        <option value={0}>Flash Cards</option>
+                        <option value={1}>Fill In Blanks</option>
+                        </select>
+                    
+                </tr><tr>
+                        
+                        <Label style={labelStyle}>5. Choose category.</Label><br/>                     
           <select  style={inputStyle} id="CategoryID" onChange = {this.setCategoryID.bind(this)}>
             <option value={2}>Music</option>
             <option value={1}>Language</option>
             <option value={3}>Science</option>
             <option value={4}>Sport</option>
+            <option value={5}>History</option>
           </select><br/><br/>   
           {this.state.submitting === true ?
                                     <button className="btn btn-info" style={{backgroundColor:"#17a2b8" ,fontSize:16}} type="button" disabled>
@@ -120,8 +134,12 @@ export default class GameMain extends Component {
                                     <button type="submit" onClick={this.submitClick.bind(this)} className="btn btn-primary" style={{backgroundColor:"#17a2b8" ,fontSize:16}} >Create</button>
                                     }  
                 </tr><br/>
-                <tr>
-                <NavLink to={"/questions"} tag={Link}>
+                <tr> 
+                <NavLink to={{
+                    pathname:'/questions',
+                    state:{
+                        GameTemp:send}
+                }} tag={Link}>
                    <button style={{width:'20em',float:'right',fontSize:'30px'}} className="btn btn-primary">Continue with defining questions =></button></NavLink>      
                 </tr> 
                 </form>
