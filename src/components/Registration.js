@@ -93,16 +93,16 @@ class Registration extends Component {
                             <div className="col-sm">
                                 <form style={{paddingLeft:50,width:450}}>
                                     <div className="form-group">
-                                    <input type="text" placeholder="Name" className="form-control" id="name" onChange = {this.setName.bind(this)} style={{fontSize:15}}/>
+                                    <input type="text" autoComplete="off" autoCorrect="off" placeholder="Name" className="form-control" id="name" onChange = {this.setName.bind(this)} style={{fontSize:15}}/>
                                     </div>
                                     <div className="form-group">
-                                    <input type="text" placeholder="Surname" className="form-control" id="surname" onChange = {this.setSurname.bind(this)} style={{fontSize:15}} />
+                                    <input type="text" autoComplete="off" autoCorrect="off" placeholder="Surname" className="form-control" id="surname" onChange = {this.setSurname.bind(this)} style={{fontSize:15}} />
                                     </div>
                                     <div className="form-group">
-                                    <input type="text" placeholder="E-mail" className="form-control" id="email" onChange = {this.setEmail.bind(this)} style={{fontSize:15}}/>
+                                    <input type="text" autoComplete="off" autoCorrect="off" placeholder="E-mail" className="form-control" id="email" onChange = {this.setEmail.bind(this)} style={{fontSize:15}}/>
                                     </div>
                                     <div className="form-group">
-                                    <input type="text" placeholder="Username" className="form-control" id="username" onChange = {this.setUsername.bind(this)} style={{fontSize:15}}/>
+                                    <input type="text" autoComplete="off" autoCorrect="off" placeholder="Username" className="form-control" id="username" onChange = {this.setUsername.bind(this)} style={{fontSize:15}}/>
                                     </div>
                                     <div className="form-group">
                                     <input type="password" placeholder="Password" className="form-control" id="password" onChange = {this.setPassword.bind(this)}style={{fontSize:15}}/>

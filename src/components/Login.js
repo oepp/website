@@ -64,7 +64,7 @@ class Login extends Component {
                                 <form  style={{paddingLeft:80}}>
                                     <div className="form-group">
                                     <label htmlFor="email"  style={{fontSize:15}}>Username</label>
-                                    <input type="text"  className="form-control" id="email" onChange = {this.setUsername.bind(this)} style ={{ width:300}}/>
+                                    <input type="text" autoComplete="off" autoCorrect="off" className="form-control" id="email" onChange = {this.setUsername.bind(this)} style ={{ width:300}}/>
                                     </div>
                                     <div className="form-group">
                                     <label htmlFor="exampleInputPassword1"  style={{fontSize:15}}>Password</label>
