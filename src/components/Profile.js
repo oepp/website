@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
 
@@ -166,6 +166,13 @@ class Profile extends Component{
                                 </tbody>
                         </table>
                     </div>
+                    <NavLink to={{
+                    pathname:'/gameMain',
+                    state:{
+                       ID:this.state.username
+                    }
+                }} tag={Link}>
+                   <button style={{width:'20em',float:'right',fontSize:'30px',marginRight:20}} className="btn btn-danger">Create another Game !!!</button></NavLink>    
                 </div>
             </div>  
         );

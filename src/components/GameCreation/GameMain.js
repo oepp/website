@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import {  Label } from 'reactstrap'
 import { NavLink, Link } from 'react-router-dom'
 
+
 export default class GameMain extends Component {
+    
+   
     constructor(props){
         super(props);
         this.state = {
@@ -11,10 +14,11 @@ export default class GameMain extends Component {
             GameDescription: "",
             GameImage: null,
             CategoryID: 0,
-            selectedvalue : 0
+            selectedvalue : 0,
+            
         }
-
-    }
+    } 
+   
     setTemplate(event){
         this.setState({selectedvalue: event.target.value});
     }
@@ -83,12 +87,14 @@ export default class GameMain extends Component {
         var cardStyle={
             border:'5px solid lightblue',
             marginTop:'20px'
-        }
+        } 
+        const {categories}  = this.state
         return (
             <div className="container" style={{paddingTop:100}}>
                 <h1><b>You are here in Game creation page.</b></h1><hr/>
                 <div className="card-header" style={cardStyle}>
                     <h1 style={{textAlign:'center'}}><ins><b>Explain your game with fill in below questions.</b></ins></h1>
+                   
                 </div>
                 <div className="card-body" style={cardStyle}>
                 
@@ -96,6 +102,10 @@ export default class GameMain extends Component {
                     <tr>
                             <Label style={labelStyle}> 1. What is your game's title?</Label><br/>
                             <input  style={inputStyle} id="GameTitle" onChange = {this.setGameTitle.bind(this)} type="text" placeholder="Enter title here..."></input>
+                    </tr>
+                    <tr>
+        <p>{this.props.history.location.state.ID}Fuckkkkkk</p>
+        
                     </tr>
                     <tr>
                         
@@ -138,7 +148,10 @@ export default class GameMain extends Component {
                 <NavLink to={{
                     pathname:'/questions',
                     state:{
-                        GameTemp:send}
+                        GameTemp:send,
+                        GameName:this.state.GameTitle,
+                        Username: this.props.history.location.state.ID
+                    }
                 }} tag={Link}>
                    <button style={{width:'20em',float:'right',fontSize:'30px'}} className="btn btn-primary">Continue with defining questions =></button></NavLink>      
                 </tr> 
