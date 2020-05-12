@@ -62,7 +62,9 @@ class Registration extends Component {
                 surname: this.state.surname,
                 email: this.state.email,
                 username: this.state.username,
-                password: this.state.password
+                password: this.state.password,
+                confirmpassword: this.state.confirmpassword
+
             })
         }
         fetch("http://localhost:3001/user/register", params)
