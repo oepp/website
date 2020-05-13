@@ -48,6 +48,7 @@ export default class GameMain extends Component {
          this.setState({
              submitting: true
          });
+         
          const params = {
              method: "POST",
              headers: {"Content-Type": "application/json"},
@@ -104,7 +105,7 @@ export default class GameMain extends Component {
                             <input  style={inputStyle} id="GameTitle" onChange = {this.setGameTitle.bind(this)} type="text" placeholder="Enter title here..."></input>
                     </tr>
                     <tr>
-        <p>{this.props.history.location.state.ID}Fuckkkkkk</p>
+        <p>{this.props.history.location.state.ID}</p>
         
                     </tr>
                     <tr>

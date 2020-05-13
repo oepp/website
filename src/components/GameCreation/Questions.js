@@ -11,7 +11,7 @@ export default class Questions extends Component {
     super(props)
     this.state = {
       submitting: false,
-      idContent:0,
+     
       ReleaseTime:"",
       Income:0,
       Gameid:0,
@@ -20,11 +20,7 @@ export default class Questions extends Component {
       users:[]    
   }
   }
-  setidContent(event) {
-    this.setState({
-        idContent:event.target.value
-    })  
- }
+  
   setReleaseTime(event) {
     this.setState({
         ReleaseTime:event.target.value
@@ -95,7 +91,7 @@ submitClick(event){
         <div>
         
           <div className="card-header">
-            <h1 style={{align: 'center'}}>Flash in blanks page please define your questions.</h1>
+            <h1 style={{align: 'center'}}>Flash Cards page please define your questions.</h1>
           </div>
           <div style={{padding:'10px',paddingTop:'30px',width:'50%'}}>
             <FlashCards/>
@@ -135,14 +131,12 @@ renderUser =  ({UserID}) => <div key={UserID}>{UserID}</div>
             <div style={{paddingTop:100}}>  
             {this.routePage(this.props.history.location.state.GameTemp)}
               <form>
-              <tr>           
-                <input type="text"  id="idContent" onChange = {this.setidContent.bind(this)} type="text" placeholder="Enter title here..."></input>
-              </tr>
+              
               <tr>           
                 <input type="number"  id="ReleaseTime" onChange = {this.setReleaseTime.bind(this)} type="text" placeholder="Enter title here..."></input>
               </tr>
               <tr>           
-        <input type="text" id="Income" onChange = {this.setIncome.bind(this)}  type="text" placeholder="Enter title here..."></input>
+        <p id="Income" onChange = {this.setIncome.bind(this)}  type="text" placeholder="Enter title here...">{0}</p>
               </tr>
           <p id="Gameid" onChange = {this.setGameid.bind(this)} type="text" placeholder="Enter title here..." >{this.cardRow()}</p>  
           <p id="usr_id" onChange = {this.setUserID.bind(this)} type="text" placeholder="Enter title here..." >{users.map(this.renderUser)}</p> 

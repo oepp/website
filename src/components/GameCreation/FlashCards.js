@@ -10,15 +10,22 @@ const Question =()=>{
   return(
     <div>
       {inputList}
-      <button className="btn btn-primary" onClick={onAddBlankClick}>Add Blank</button>
+      <button className="btn btn-primary" onClick={onAddBlankClick}>Add Question</button>
     </div>
   )
 }
 const Blank=()=>{
   return(
     <div style={{paddingBottom:20}}>
+      <form>
       <input type ="text" name="blank">
-      </input><input style={{marginLeft:10}} type="radio"></input>
+      </input><input style={{marginLeft:10}}name="radioBtn" type="radio"></input><br/>
+      <input type ="text" name="blank">
+      </input><input style={{marginLeft:10}}name="radioBtn" type="radio"></input><br/>
+      <input type ="text" name="blank">
+      </input><input style={{marginLeft:10}}name="radioBtn" type="radio"></input><br/>
+      <input type ="text" name="blank">
+      </input><input style={{marginLeft:10}} name="radioBtn" type="radio"></input><br/></form>
     </div>
   )
 }
@@ -28,7 +35,10 @@ const Input = () => {
     <p style={{fontSize:20}}><b>Enter question description here:</b></p>
    <textarea style={{width:'50em'}} placeholder="Write here to your question's description in this place.
     e.g 'This question includes Nelson Mendela'  personal life.'"/><br/><br/>
-    <p style={{fontSize:20}}>Press the button for adding blanks.You write your sentence's word box/boxes. And please checked for your blanks.</p>
+   <p style={{fontSize:20}}><b>Write your question below box:</b></p>
+   <textarea style={{width:'50em'}} placeholder="Write here to your question in this place.
+    e.g 'When Nelson Mendela died? '"/><br/><br/>
+    <p style={{fontSize:20,width:'25em'}}>Press the button for adding answers.You write your sentence's word box/boxes. And please checked each one of them for your question.</p>
  <Question/>
   </div>
   );
@@ -45,7 +55,7 @@ const Form = () => {
     <div style={{float: 'center'}}>
     
       {inputList}
-      <button className="btn btn-primary" onClick={onAddBtnClick}>Add input</button>
+      <button className="btn btn-primary" onClick={onAddBtnClick}>Add New Line</button>
     </div>
   );
 };
@@ -54,7 +64,6 @@ export default class FlashCards extends Component {
         return (
             <div>
                 <Form style={{paddingTop:'50px'}}/>
-                <Button>Press for saving questions</Button>
             </div>
         )
     }
