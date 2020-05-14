@@ -127,29 +127,27 @@ renderUser =  ({UserID}) => <div key={UserID}>{UserID}</div>
     render() {
       const {users} =this.state;
         return (
-         
             <div style={{paddingTop:100}}>  
-            {this.routePage(this.props.history.location.state.GameTemp)}
+              {this.routePage(this.props.history.location.state.GameTemp)}
               <form>
-              
-              <tr>           
-                <input type="number"  id="ReleaseTime" onChange = {this.setReleaseTime.bind(this)} type="text" placeholder="Enter title here..."></input>
-              </tr>
-              <tr>           
-        <p id="Income" onChange = {this.setIncome.bind(this)}  type="text" placeholder="Enter title here...">{0}</p>
-              </tr>
-          <p id="Gameid" onChange = {this.setGameid.bind(this)} type="text" placeholder="Enter title here..." >{this.cardRow()}</p>  
-          <p id="usr_id" onChange = {this.setUserID.bind(this)} type="text" placeholder="Enter title here..." >{users.map(this.renderUser)}</p> 
-          {this.state.submitting === true ?
-                                    <button className="btn btn-info" style={{backgroundColor:"#17a2b8" ,fontSize:16}} type="button" disabled>
-                                    <span className="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
-                                            &nbsp;Submitting...
-                                </button>
-                                    : 
-                                    <button type="submit" onClick={this.submitClick.bind(this)} className="btn btn-primary" style={{backgroundColor:"#17a2b8" ,fontSize:16}} >Save</button>
-                                    } 
+                <tr>           
+                  <input type="number"  id="ReleaseTime" onChange = {this.setReleaseTime.bind(this)} type="text" placeholder="Enter title here..."></input>
+                </tr>
+                <tr>           
+                  <p id="Income" onChange = {this.setIncome.bind(this)}  type="text" placeholder="Enter title here...">{0}</p>
+                </tr>
+                <p id="Gameid" onChange = {this.setGameid.bind(this)} type="text" placeholder="Enter title here..." >{this.cardRow()}</p>  
+                <p id="usr_id" onChange = {this.setUserID.bind(this)} type="text" placeholder="Enter title here..." >{users.map(this.renderUser)}</p> 
+                {this.state.submitting === true ?
+                <button className="btn btn-info" style={{backgroundColor:"#17a2b8" ,fontSize:16}} type="button" disabled>
+                  <span className="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
+                  &nbsp;Submitting...
+                </button>
+                : 
+                <button type="submit" onClick={this.submitClick.bind(this)} className="btn btn-primary" style={{backgroundColor:"#17a2b8" ,fontSize:16}} >Save</button>
+                } 
              </form>
-            </div>
+          </div>
         )
+      }
     }
-}

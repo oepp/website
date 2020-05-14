@@ -43,11 +43,11 @@ class FeedbackList extends Component{
             })
         }
         return (
-            <div className="container" style={{paddingLeft:0,height:1000}}>
+            <div className="container" style={{paddingLeft:100,height:1000,marginTop:50}}>
                 <br/><br/>
-                <div className="card center"  style={{width:'75vw', height:500, marginTop:'7vh', marginLeft: '-50px'}} >
+                <div className="card center"  style={{width:'75vw', height:500, marginTop:50, marginLeft: '-50px'}} >
                     <div className="card-body" style={{padding:50,backgroundColor:'#fafafa'}}>
-                        <center><h1 style={{marginBottom:30}}>COURSE FEEDBACKS</h1></center>
+                        <center><h1 style={{marginBottom:30}}>GAMES FEEDBACKS</h1></center>
                         <table className="table table-hover" style={{height:300}}>
                                 <thead>
                                     <tr style={{fontSize:20}}>

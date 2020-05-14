@@ -29,7 +29,7 @@ export default class CardUI extends Component {
                         GameTitle:this.props.obj.GameTitle
                     }
                    }}  >
-                    <a href="#" className="btn btn-outline-success">See Details</a>
+                    <a href="#" className="btn btn-outline-danger">See Details</a>
                     </NavLink>
                 </div>
                 <div className="card-footer">

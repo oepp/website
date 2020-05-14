@@ -54,7 +54,6 @@ class Login extends Component {
     }
     render() {
         return (
-
             <div className="container" style={{paddingLeft:150}}>
                 <div className="card center"style={{width:775,height:350,marginTop:150}}>
                     <div className="card-body" style={{backgroundColor:'#fafafa'}}>
@@ -63,12 +62,12 @@ class Login extends Component {
                             <div className="col-sm">
                                 <form  style={{paddingLeft:80}}>
                                     <div className="form-group">
-                                    <label htmlFor="email"  style={{fontSize:15}}>Username</label>
-                                    <input type="text" autoComplete="off" autoCorrect="off" className="form-control" id="email" onChange = {this.setUsername.bind(this)} style ={{ width:300}}/>
+                                        <label htmlFor="email"  style={{fontSize:15}}>Username</label>
+                                        <input type="text" autoComplete="off" autoCorrect="off" className="form-control" id="email" onChange = {this.setUsername.bind(this)} style ={{ width:300}}/>
                                     </div>
                                     <div className="form-group">
-                                    <label htmlFor="exampleInputPassword1"  style={{fontSize:15}}>Password</label>
-                                    <input type="password" className="form-control" id="exampleInputPassword1" onChange = {this.setPassword.bind(this)} style ={{ width:300}}/>
+                                        <label htmlFor="exampleInputPassword1"  style={{fontSize:15}}>Password</label>
+                                        <input type="password" className="form-control" id="exampleInputPassword1" onChange = {this.setPassword.bind(this)} style ={{ width:300}}/>
                                     </div>
                                     <div>
                                         <h5 style={{paddingLeft:170}}><a href="./ForgotAccount" style={{backgroundColor:'#fef3d0', color:'#001fff'}}>Forgot your account?</a></h5>
@@ -90,7 +89,6 @@ class Login extends Component {
                     </div>
                 </div>
             </div>
-            
         );
     }
 }

@@ -110,7 +110,7 @@ class Profile extends Component{
             });
         }
         return (
-            <div className="container" style={{paddingLeft:100,height:1000}}>
+            <div className="container" style={{paddingLeft:100,height:1200}}>
                 <br/>
                 <div className="card center"  style={{width:900, height:300, marginTop:100}} >
                     <div className="card-body" style={{backgroundColor:'#fafafa'}}>
@@ -119,37 +119,48 @@ class Profile extends Component{
                             <div className="col-sm">
                                 <div className="form-row">
                                     <div className="col-6" style={{paddingLeft:75}}>
-                                    <input name={'name'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.name} placeholder="Name"></input>
-                                    </div> &nbsp; &nbsp; 
+                                        <input name={'name'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.name} placeholder="Name"></input>
+                                    </div>&nbsp;&nbsp; 
                                     <div className="col-5" style={{paddingLeft:50}}>
-                                    <input name={'surname'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.surname} placeholder="Surname"></input>
-                                    </div>  &nbsp; &nbsp; 
+                                        <input name={'surname'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.surname} placeholder="Surname"></input>
+                                    </div>&nbsp;&nbsp; 
                                 </div><br/>
                                 <div className="form-row">
                                     <div className="col-6" style={{paddingLeft:75}}>
-                                    <input name={'email'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.email} placeholder="Email"></input>
+                                        <input name={'email'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.email} placeholder="Email"></input>
                                     </div>  &nbsp; &nbsp; 
                                     <div className="col-5" style={{paddingLeft:50}}>
-                                    <input name={'username'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.username} placeholder="Username"></input>
-                                    </div> &nbsp; &nbsp; 
+                                        <input name={'username'} className="form-control form-control-lg" type="text" onChange={this.onTextInput.bind(this)} value={this.state.username} placeholder="Username"></input>
+                                    </div>&nbsp;&nbsp; 
                                 </div><br/>
                                 <div className="form-row">
                                     <div className="col-6" style={{paddingLeft:75}}>
-                                    <input name={'password'} className="form-control form-control-lg" type="password" onChange={this.onTextInput.bind(this)} value={this.state.password} placeholder="Password"></input>
+                                        <input name={'password'} className="form-control form-control-lg" type="password" onChange={this.onTextInput.bind(this)} value={this.state.password} placeholder="Password"></input>
                                     </div>  &nbsp; &nbsp; 
                                     <div className="col-5" style={{paddingLeft:50}}>
-                                    <input name={'confirmPassword'} className="form-control form-control-lg" type="password" onChange={this.onTextInput.bind(this)} value={this.state.confirmPassword} placeholder="Confirm Password"></input>
+                                        <input name={'confirmPassword'} className="form-control form-control-lg" type="password" onChange={this.onTextInput.bind(this)} value={this.state.confirmPassword} placeholder="Confirm Password"></input>
                                     </div> 
                                 </div><br/><br/>
-                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                <div style={{paddingLeft:445}}>
-                                    <button type="button" className="btn btn-primary btn-lg" onClick={this.onEditForm.bind(this)} style={{backgroundColor:'#5062e1'}}>&nbsp; &nbsp;Edit&nbsp; &nbsp;</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <div style={{paddingLeft:425}}>
+                                    <button type="button" className="btn btn-primary btn-lg" onClick={this.onEditForm.bind(this)} style={{backgroundColor:'#5062e1', fontSize:15}}>&nbsp;&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="card center"  style={{width:900, height:500, marginTop:20}} >
+                <div className="btn-group-vertical col-md-4 float-center" style={{ marginTop:30, marginBottom:30, paddingLeft:300}}>
+                    <NavLink to={{
+                                pathname:'/gameMain',
+                                state:{
+                                ID:this.state.username
+                                }}} tag={Link}>
+                                <button style={{width:'10em',fontSize:'30px'}} className="btn btn-danger">
+                                    Create New Game 
+                                </button>
+                    </NavLink> 
+                </div>
+                <div className="card center"  style={{width:900, height:450, marginTop:20}} >
                     <div className="card-body" style={{padding:50,backgroundColor:'#fafafa'}}>
                         <center><h1 style={{marginBottom:30}}>GAMES</h1></center>
                         <table className="table table-hover" style={{height:300}}>
@@ -166,16 +177,9 @@ class Profile extends Component{
                                 </tbody>
                         </table>
                     </div>
-                    <NavLink to={{
-                    pathname:'/gameMain',
-                    state:{
-                       ID:this.state.username
-                    }
-                }} tag={Link}>
-                   <button style={{width:'20em',float:'right',fontSize:'30px',marginRight:20}} className="btn btn-danger">Create another Game !!!</button></NavLink>    
                 </div>
             </div>  
         );
     }
 }
-export default Profile;
+export default Profile;   

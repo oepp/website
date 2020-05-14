@@ -8,7 +8,6 @@ export default class SpecialCase extends Component {
         return (
             <div>
                 <p>{this.props.obj.idGames}</p>
-                
             </div>
         )
     }
