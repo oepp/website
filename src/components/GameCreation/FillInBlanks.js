@@ -53,11 +53,11 @@ export default class FillInBlanks extends Component {
     render() {
         return (
             <div>
-            <div style={{border:'5px solid green',marginBottom:'20px'}}>
+            <div style={{marginBottom:'20px'}}>
               <p style={{fontSize:'20px',marginLeft:10}}><i>Press the "Add Input" button when you are ready for preparing questions.</i></p>
             </div>
                 <Form style={{paddingTop:'50px'}}/>
-                <Button>Press for saving questions</Button>
+               
             </div>
         )
     }

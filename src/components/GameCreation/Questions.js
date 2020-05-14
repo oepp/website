@@ -78,8 +78,11 @@ submitClick(event){
     if(value ==1){
       return (
         <div> 
-          <div className="card-header">
-            <h1 style={{align: 'center'}}>Fill in blanks page please define your questions.</h1>
+          <div className="card-header" style={{border:'3px solid lightblue',backgroundColor:'#fff'}}>
+            <h1 style={{textAlign:'center'}}>Fill in blanks page please define your questions.</h1>
+          </div>
+          <div style={{float:'right',paddingRight:10,paddingTop:20}}>
+           <img style={{float:'right'}} src="https://static1.squarespace.com/static/55c04305e4b0e6d1aa6219d5/t/57c67a2eb8a79ba9708e308d/1472625199242/fill_in_the_blank_bad_day_game.jpg" alt="flashcard"/>
           </div>
           <div style={{padding:'10px',paddingTop:'30px',width:'50%'}}>
             <FillInBlanks/>
@@ -90,11 +93,15 @@ submitClick(event){
       return (
         <div>
         
-          <div className="card-header">
-            <h1 style={{align: 'center'}}>Flash Cards page please define your questions.</h1>
+          <div className="card-header" style={{border:'3px solid lightblue',backgroundColor:'#fff'}}>
+            <h1 style={{textAlign: 'center'}}>Flash Cards page please define your questions.</h1>
           </div>
-          <div style={{padding:'10px',paddingTop:'30px',width:'50%'}}>
+          <div style={{float:'right',paddingRight:10,paddingTop:20}}>
+           <img style={{float:'right',width:'100%',height:'100%'}} src="https://www.makemyassignments.com/blog/wp-content/uploads/2018/09/alphabet-flashcards-2x.png" alt="flashcard"/>
+            </div>
+          <div style={{padding:'10px',paddingTop:'30px',width:'50%',paddingLeft:20}}>
             <FlashCards/>
+            
           </div>
         </div>
     )
@@ -129,7 +136,7 @@ renderUser =  ({UserID}) => <div key={UserID}>{UserID}</div>
         return (
             <div style={{paddingTop:100}}>  
               {this.routePage(this.props.history.location.state.GameTemp)}
-              <form>
+              <form style={{paddingLeft:20}}>
                 <tr>           
                   <input type="number"  id="ReleaseTime" onChange = {this.setReleaseTime.bind(this)} type="text" placeholder="Enter title here..."></input>
                 </tr>

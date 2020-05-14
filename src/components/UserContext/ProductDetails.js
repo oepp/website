@@ -25,7 +25,7 @@ export default class ProductDetails extends Component {
         return (
             <div style={{paddingTop:100}}> 
             
-            <div className="card-header">
+            <div className="card-header" style={{border:'3px dashed lightblue',backgroundColor:'#fff'}}>
         <h1 style={{textAlign:'center'}}><b>You are looking for {this.props.history.location.state.GameTitle} details.</b> </h1></div>
             <div className="card-body btn-group" style={{marginBottom:100,marginTop:-10, paddingLeft:100}}>
              <button className="button" style={{verticalAlign:'middle',backgroundColor:'#293BD3',borderRadius:'12px'}}><span>Return Home Page </span><i className="fas fa-home">

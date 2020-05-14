@@ -55,7 +55,7 @@ const Form = () => {
     <div style={{float: 'center'}}>
     
       {inputList}
-      <button className="btn btn-primary" onClick={onAddBtnClick}>Add New Line</button>
+      <button className="btn btn-primary" style={{width:'20em'}} onClick={onAddBtnClick}>Add New Line</button>
     </div>
   );
 };
@@ -63,6 +63,7 @@ export default class FlashCards extends Component {
     render() {
         return (
             <div>
+             <p style={{fontSize:'20px',marginLeft:10}}><i>Press the "Add Line" button when you are ready for preparing questions.</i></p>
                 <Form style={{paddingTop:'50px'}}/>
             </div>
         )
