@@ -50,7 +50,7 @@ class ConfirmPassword extends Component{
                 console.log(result);
                 if(result.status === "success"){
                     alert("Password updated succesfully!");
-                    window.location.replace("/ConfirmPassword");
+                    window.location = "http://localhost:3000/login";
                 }
                 if(result.status === "error"){
                     alert(result.message);

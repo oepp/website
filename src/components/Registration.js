@@ -73,6 +73,7 @@ class Registration extends Component {
                 console.log(result);
                 if(result.status === "success"){
                     alert("Your registration is successful!");
+                    window.location = "http://localhost:3000/login";
                 }
                 if(result.status === "error"){
                     alert(result.message);

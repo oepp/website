@@ -90,10 +90,10 @@ class Feedback extends Component {
                                 name='rating'
                             />
                             </div>
-                            <div className="form-group">
+                            {/* <div className="form-group">
                                 <label for="courseName" style={{fontSize:16}}>Course Name</label>
                                 <input type="email" className="form-control" id="feedbacourseNameckEmail"/>
-                            </div>
+                            </div> */}
                             <div className="form-group" >
                                 <label for="message" style={{fontSize:16}}>Message</label>
                                 <textarea className="form-control" id="message" rows="10" onChange = {this.setFeedbackMessage.bind(this)}></textarea>
