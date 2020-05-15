@@ -25,7 +25,7 @@ export default class Cards extends Component {
         return (
         <div style={{paddingTop:100,paddingBottom:60}}> 
            <h1><b>Most Relevant Games</b></h1>
-          <Row style={{backgroundColor:'unset'}}>         
+          <Row style={{backgroundColor:'#00E2FF'}}>         
                 {this.cardRow()}
           </Row>
         
