@@ -98,7 +98,7 @@ class Profile extends Component{
                         <td>{item.course}</td>
                         <td>In Progress</td>
                         <td>
-                            <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%80</button>
+                            <button type="button" class="btn btn-outline-success" style={{fontSize:18}}>%100</button>
                             &nbsp;&nbsp;
                             <button type="button" class="btn btn-outline-primary" style={{fontSize:18}}><Link to={"./feedback?gameId=" + item.id}>Feedback</Link></button>
                             &nbsp;&nbsp;
@@ -167,7 +167,7 @@ class Profile extends Component{
                                 <thead>
                                     <tr style={{fontSize:20}}>
                                     <th scope="col">#</th>
-                                    <th scope="col">Course</th>
+                                    <th scope="col">Game</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                     </tr>
